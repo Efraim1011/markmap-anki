@@ -14,30 +14,130 @@
   <h1>Mapa Mental 3</h1>
   <div id="mapa3"></div>
 
+  <h1>Mapa Mental 4</h1>
+  <div id="mapa4"></div>
+
+  <h1>Mapa Mental 5</h1>
+  <div id="mapa5"></div>
+
+  <h1>Mapa Mental 6</h1>
+  <div id="mapa6"></div>
+
+  <h1>Mapa Mental 7</h1>
+  <div id="mapa7"></div>
+
+  <h1>Mapa Mental 8</h1>
+  <div id="mapa8"></div>
+
+  <h1>Mapa Mental 9</h1>
+  <div id="mapa9"></div>
+
+  <h1>Mapa Mental 10</h1>
+  <div id="mapa10"></div>
+
+  <h1>Mapa Mental 11</h1>
+  <div id="mapa11"></div>
+
+  <h1>Mapa Mental 12</h1>
+  <div id="mapa12"></div>
+
+  <h1>Mapa Mental 13</h1>
+  <div id="mapa13"></div>
+
+  <h1>Mapa Mental 14</h1>
+  <div id="mapa14"></div>
+
+  <h1>Mapa Mental 15</h1>
+  <div id="mapa15"></div>
+
+  <h1>Mapa Mental 16</h1>
+  <div id="mapa16"></div>
+
+  <h1>Mapa Mental 17</h1>
+  <div id="mapa17"></div>
+
+  <h1>Mapa Mental 18</h1>
+  <div id="mapa18"></div>
+
+  <h1>Mapa Mental 19</h1>
+  <div id="mapa19"></div>
+
+  <h1>Mapa Mental 20</h1>
+  <div id="mapa20"></div>
+
+  <h1>Mapa Mental 21</h1>
+  <div id="mapa21"></div>
+
+  <h1>Mapa Mental 22</h1>
+  <div id="mapa22"></div>
+
+  <h1>Mapa Mental 23</h1>
+  <div id="mapa23"></div>
+
+  <h1>Mapa Mental 24</h1>
+  <div id="mapa24"></div>
+
+  <h1>Mapa Mental 25</h1>
+  <div id="mapa25"></div>
+
+  <h1>Mapa Mental 26</h1>
+  <div id="mapa26"></div>
+
+  <h1>Mapa Mental 27</h1>
+  <div id="mapa27"></div>
+
+  <h1>Mapa Mental 28</h1>
+  <div id="mapa28"></div>
+
+  <h1>Mapa Mental 29</h1>
+  <div id="mapa29"></div>
+
+  <h1>Mapa Mental 30</h1>
+  <div id="mapa30"></div>
+
+  <h1>Mapa Mental 31</h1>
+  <div id="mapa31"></div>
+
+  <h1>Mapa Mental 32</h1>
+  <div id="mapa32"></div>
+
+  <h1>Mapa Mental 33</h1>
+  <div id="mapa33"></div>
+
+  <h1>Mapa Mental 34</h1>
+  <div id="mapa34"></div>
+
+  <h1>Mapa Mental 35</h1>
+  <div id="mapa35"></div>
+
+  <h1>Mapa Mental 36</h1>
+  <div id="mapa36"></div>
+
+  <h1>Mapa Mental 37</h1>
+  <div id="mapa37"></div>
+
+  <h1>Mapa Mental 38</h1>
+  <div id="mapa38"></div>
+
+  <h1>Mapa Mental 39</h1>
+  <div id="mapa39"></div>
+
+  <h1>Mapa Mental 40</h1>
+  <div id="mapa40"></div>
+
   <script>
-    fetch('mapa1.md')
-      .then(response => response.text())
-      .then(text => {
-        const { Markmap } = window.markmap;
-        const svg = document.querySelector('#mapa1');
-        Markmap.create(svg, null, text);
-      });
-
-    fetch('mapa2.md')
-      .then(response => response.text())
-      .then(text => {
-        const { Markmap } = window.markmap;
-        const svg = document.querySelector('#mapa2');
-        Markmap.create(svg, null, text);
-      });
-
-    fetch('mapa3.md')
-      .then(response => response.text())
-      .then(text => {
-        const { Markmap } = window.markmap;
-        const svg = document.querySelector('#mapa3');
-        Markmap.create(svg, null, text);
-      });
+    for (let i = 1; i <= 40; i++) {
+      fetch(`mapa${i}.md`)
+        .then(response => response.text())
+        .then(text => {
+          const { Markmap } = window.markmap;
+          const svg = document.querySelector(`#mapa${i}`);
+          Markmap.create(svg, null, text);
+        });
+    }
   </script>
 </body>
 </html>
+
+ 
+      
