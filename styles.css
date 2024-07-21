@@ -29,15 +29,16 @@ ul li {
 /* Estilo dos botões */
 ul li a {
     display: inline-block;
-    background-color: #ff9800; /* Cor laranja */
-    color: white;
+    background-color: black; /* Cor do botão */
+    color: orange; /* Cor do texto */
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px; /* Contornos curvos */
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Efeito ao passar o mouse */
 ul li a:hover {
-    background-color: #e68a00; /* Cor laranja escura */
+    background-color: #333; /* Cor preta mais clara */
+    color: #ff9800; /* Laranja mais clara */
 }
