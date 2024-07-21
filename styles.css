@@ -19,14 +19,11 @@ ul {
     padding: 20px;
     border-radius: 15px; /* Contornos curvos */
     list-style-type: none; /* Remove os marcadores de lista */
-    display: inline-block; /* Altera para inline-block */
-    width: max-content; /* Ajusta à largura do conteúdo */
 }
 
 /* Estiliza os itens da lista */
 ul li {
     margin: 10px 0; /* Espaçamento entre os itens da lista */
-    white-space: nowrap; /* Impede quebra de linha */
 }
 
 /* Estilo dos botões */
