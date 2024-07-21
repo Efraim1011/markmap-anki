@@ -1,0 +1,26 @@
+/* Define o plano de fundo preto */
+body {
+    background-color: black;
+    color: white; /* Mantém o texto legível */
+}
+
+/* Estiliza o título "Mapas mentais" */
+h1 {
+    background-color: orange; /* Cor do retângulo */
+    color: black; /* Cor do texto */
+    padding: 10px 20px;
+    border-radius: 15px; /* Contornos curvos */
+    display: inline-block;
+}
+
+/* Estiliza a lista de mapas mentais */
+ul {
+    background-color: orange; /* Cor do retângulo */
+    padding: 20px;
+    border-radius: 15px; /* Contornos curvos */
+}
+
+/* Estiliza os itens da lista */
+ul li {
+    color: black; /* Cor do texto dos itens */
+}
