@@ -18,19 +18,20 @@ ul {
     background-color: orange; /* Cor do retângulo */
     padding: 20px;
     border-radius: 15px; /* Contornos curvos */
+    list-style-type: none; /* Remove os marcadores de lista */
 }
 
 /* Estiliza os itens da lista */
 ul li {
-    color: black; /* Cor do texto dos itens */
+    margin: 10px 0; /* Espaçamento entre os itens da lista */
 }
+
 /* Estilo dos botões */
 ul li a {
     display: inline-block;
     background-color: #ff9800; /* Cor laranja */
     color: white;
     padding: 10px 20px;
-    margin: 5px 0;
     text-decoration: none;
     border-radius: 5px; /* Contornos curvos */
     transition: background-color 0.3s ease;
