@@ -19,14 +19,15 @@ h1 {
 
 /* Estilo dos botões toggle */
 .toggle-btn {
-    background-color: black; /* Cor do fundo */
-    color: orange; /* Cor do texto */
+    background-color: orange; /* Cor do fundo */
+    color: black; /* Cor do texto */
     padding: 10px 20px;
     border-radius: 15px; /* Contornos curvos */
     border: none;
     cursor: pointer;
     margin: 10px 0; /* Espaçamento entre os botões */
     font-size: 16px;
+    display: inline-block;
 }
 
 /* Estilo do conteúdo toggle */
