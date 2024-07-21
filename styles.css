@@ -24,3 +24,19 @@ ul {
 ul li {
     color: black; /* Cor do texto dos itens */
 }
+/* Estilo dos botões */
+ul li a {
+    display: inline-block;
+    background-color: #ff9800; /* Cor laranja */
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    text-decoration: none;
+    border-radius: 5px; /* Contornos curvos */
+    transition: background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+ul li a:hover {
+    background-color: #e68a00; /* Cor laranja escura */
+}
