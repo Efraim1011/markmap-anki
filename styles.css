@@ -13,6 +13,13 @@ h1 {
     display: inline-block;
 }
 
+/* Container para centralizar e ajustar o tamanho da lista */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Estiliza a lista de mapas mentais */
 ul {
     background-color: orange; /* Cor do retângulo */
@@ -21,6 +28,7 @@ ul {
     list-style-type: none; /* Remove os marcadores de lista */
     display: inline-block; /* Altera para inline-block */
     width: max-content; /* Ajusta à largura do conteúdo */
+    margin: 0 auto; /* Centraliza a lista */
 }
 
 /* Estiliza os itens da lista */
