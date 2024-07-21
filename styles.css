@@ -29,7 +29,7 @@ ul li {
 /* Estilo dos botões */
 ul li a {
     display: inline-block;
-    background-color: black; /* Cor do botão */
+    background-color: black; /* Cor preta */
     color: orange; /* Cor do texto */
     padding: 10px 20px;
     text-decoration: none;
