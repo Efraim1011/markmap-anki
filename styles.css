@@ -2,9 +2,6 @@
 body {
     background-color: black;
     color: white; /* Mantém o texto legível */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
 }
 
 /* Estiliza o título "Mapas mentais" */
@@ -14,15 +11,6 @@ h1 {
     padding: 10px 20px;
     border-radius: 15px; /* Contornos curvos */
     display: inline-block;
-    margin-top: 20px; /* Espaçamento superior */
-}
-
-/* Container para centralizar e ajustar o tamanho da lista */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ocupa a largura total */
 }
 
 /* Estiliza a lista de mapas mentais */
@@ -31,8 +19,8 @@ ul {
     padding: 20px;
     border-radius: 15px; /* Contornos curvos */
     list-style-type: none; /* Remove os marcadores de lista */
+    display: inline-block; /* Altera para inline-block */
     width: max-content; /* Ajusta à largura do conteúdo */
-    margin: 20px 0; /* Espaçamento vertical */
 }
 
 /* Estiliza os itens da lista */
