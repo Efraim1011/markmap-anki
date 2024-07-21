@@ -1,44 +1,29 @@
-/* Define o plano de fundo preto */
-body {
-    background-color: black;
-    color: white; /* Mantém o texto legível */
-}
-
-/* Estiliza o título "Mapas mentais" */
-h1 {
-    background-color: orange; /* Cor do retângulo */
-    color: black; /* Cor do texto */
-    padding: 10px 20px;
-    border-radius: 15px; /* Contornos curvos */
-    display: inline-block;
-}
-
 /* Estiliza a lista de mapas mentais */
 ul {
-    background-color: orange; /* Cor do retângulo */
+    background-color: orange;
     padding: 20px;
-    border-radius: 15px; /* Contornos curvos */
-    list-style-type: none; /* Remove os marcadores de lista */
+    border-radius: 15px;
+    list-style-type: none;
+    display: inline-flex; /* Muda para inline-flex */
+    flex-direction: column;
+    align-items: flex-start; /* Alinha itens à esquerda */
+    width: max-content; /* Ajusta à largura do conteúdo */
 }
 
 /* Estiliza os itens da lista */
 ul li {
-    margin: 10px 0; /* Espaçamento entre os itens da lista */
+    margin: 10px 0;
+    width: 100%; /* Garante que os itens ocupem toda a largura */
 }
 
 /* Estilo dos botões */
 ul li a {
-    display: inline-block;
-    background-color: black; /* Cor preta */
-    color: orange; /* Cor do texto */
+    display: block; /* Muda para block */
+    background-color: black;
+    color: orange;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px; /* Contornos curvos */
+    border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Efeito ao passar o mouse */
-ul li a:hover {
-    background-color: #333; /* Cor preta mais clara */
-    color: #ff9800; /* Laranja mais clara */
+    white-space: nowrap; /* Impede quebra de linha */
 }
