@@ -16,7 +16,7 @@ function toggleVisibility(id) {
 }
 
 async function fetchFiles(folder, elementId) {
-    const response = await fetch(`https://api.github.com/repos/<username>/<repository>/contents/${folder}`);
+    const response = await fetch(`https://api.github.com/repos/<Efraim1011>/<markmap-anki>/contents/${folder}`);
     const files = await response.json();
 
     const list = document.getElementById(elementId);
