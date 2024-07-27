@@ -62,3 +62,16 @@ ul li a:hover {
     background-color: #333; /* Cor preta mais clara */
     color: #ff9800; /* Laranja mais clara */
 }
+
+/* Estilo dos botões internos do 3º Período */
+#periodo3 .inner-toggle-btn {
+    background-color: black; /* Cor preta */
+    color: orange; /* Cor do texto */
+    padding: 10px 20px;
+    border-radius: 15px; /* Contornos curvos */
+    border: none;
+    cursor: pointer;
+    margin: 10px 0; /* Espaçamento entre os botões */
+    font-size: 16px;
+    display: block;
+}
