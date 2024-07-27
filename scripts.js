@@ -37,10 +37,10 @@ async function fetchFiles(folder, elementId) {
 
 window.onload = function() {
     console.log("window.onload executado!");
-    fetchFiles('Fisiologia/Fisiologia%20I', 'fisiologiaIList');
-    fetchFiles('Fisiologia/Fisiologia%20II', 'fisiologiaIIList');
     fetchFiles('Anatomia/Anatomia%20I', 'anatomiaIList');
+    fetchFiles('Fisiologia/Fisiologia%20I', 'fisiologiaIList');
     fetchFiles('Anatomia/Anatomia%20II', 'anatomiaIIList');
+    fetchFiles('Fisiologia/Fisiologia%20II', 'fisiologiaIIList');
     fetchFiles('Semiologia', 'semiologiaList');
     fetchFiles('Patologia', 'patologiaList');
     fetchFiles('Parasitologia', 'parasitologiaList');
