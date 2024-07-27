@@ -42,4 +42,8 @@ window.onload = function() {
     fetchFiles('Anatomia/Anatomia%20I', 'anatomiaIList');
     fetchFiles('Anatomia/Anatomia%20II', 'anatomiaIIList');
     fetchFiles('Semiologia', 'semiologiaList');
+    fetchFiles('Patologia', 'patologiaList');
+    fetchFiles('Parasitologia', 'parasitologiaList');
+    fetchFiles('Imunologia', 'imunologiaList');
+    fetchFiles('Microbiologia', 'microbiologiaList');
 }
