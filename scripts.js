@@ -35,11 +35,46 @@ async function fetchFiles(folder, elementId) {
     }
 }
 
-window.onload = function() {
-    console.log("window.onload executado!");
-    fetchFiles('Fisiologia/Fisiologia%20I', 'fisiologiaIList');
-    fetchFiles('Fisiologia/Fisiologia%20II', 'fisiologiaIIList');
-    fetchFiles('Anatomia/Anatomia%20I', 'anatomiaIList');
-    fetchFiles('Anatomia/Anatomia%20II', 'anatomiaIIList');
-    fetchFiles('Semiologia', 'semiologiaList');
+async function fetchDisciplinas() {
+    const repoUrl = 'https://api.github.com/repos/Efraim1011/markmap-anki/contents';
+    try {
+        const response = await fetch(repoUrl);
+        const data = await response.json();
+
+        if (Array.isArray(data)) {
+            return data.filter(item => item.type === 'dir').map(item => item.name);
+        } else {
+            console.error('Erro ao buscar dados do repositório:', data);
+        }
+    } catch (error) {
+        console.error('Erro ao buscar dados do repositório:', error);
+    }
+    return [];
 }
+
+async function createDisciplinasButtons() {
+    const disciplinas = await fetchDisciplinas();
+    const container = document.getElementById('disciplinas-container');
+
+    disciplinas.forEach(disciplina => {
+        const button = document.createElement('button');
+        button.textContent = disciplina.replace(/%20/g, ' ');
+        button.className = 'toggle-btn';
+        button.onclick = () => toggleVisibility(disciplina);
+
+        const contentDiv = document.createElement('div');
+        contentDiv.id = disciplina;
+        contentDiv.className = 'toggle-content';
+
+        const list = document.createElement('ul');
+        list.id = `${disciplina}List`;
+        contentDiv.appendChild(list);
+
+        container.appendChild(button);
+        container.appendChild(contentDiv);
+
+        fetchFiles(disciplina, `${disciplina}List`);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', createDisciplinasButtons);
