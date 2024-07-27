@@ -74,4 +74,6 @@ ul li a:hover {
     margin: 10px 0; /* Espaçamento entre os botões */
     font-size: 16px;
     display: block;
+    width: 100%; /* Ocupa toda a largura disponível */
+    text-align: center;
 }
