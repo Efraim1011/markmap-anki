@@ -63,10 +63,11 @@ ul li a:hover {
     color: #ff9800; /* Laranja mais clara */
 }
 
-/* Estilo dos botões internos do 1º, 2º e 3º Período */
+/* Estilo dos botões internos dos períodos */
 #periodo1 .inner-toggle-btn,
 #periodo2 .inner-toggle-btn,
-#periodo3 .inner-toggle-btn {
+#periodo3 .inner-toggle-btn,
+#periodo4 .inner-toggle-btn {
     background-color: black; /* Cor preta */
     color: orange; /* Cor do texto */
     padding: 10px 20px;
