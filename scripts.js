@@ -46,4 +46,11 @@ window.onload = function() {
     fetchFiles('3ºPeríodo/Parasitologia', 'parasitologiaList');
     fetchFiles('3ºPeríodo/Imunologia', 'imunologiaList');
     fetchFiles('3ºPeríodo/Microbiologia', 'microbiologiaList');
+    fetchFiles('4º%20Período/Farmacologia', 'farmacologiaList');
+    fetchFiles('4º%20Período/Epidemiologia', 'epidemiologiaList');
+    fetchFiles('4º%20Período/Otorrinolaringologia', 'otorrinolaringologiaList');
+    fetchFiles('4º%20Período/Oftalmologia', 'oftalmologiaList');
+    fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
+    fetchFiles('4º%20Período/Saude%20da%20Familia%20IV', 'saudefamiliaivList');
+}
 }
