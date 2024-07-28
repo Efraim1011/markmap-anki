@@ -38,12 +38,12 @@ async function fetchFiles(folder, elementId) {
 window.onload = function() {
     console.log("window.onload executado!");
     fetchFiles('1º%20Período/Anatomia%20I', 'anatomiaIList');
-    fetchFiles('2º%20Período/Fisiologia%20I', 'fisiologiaIList');
+    fetchFiles('1º%20Período/Fisiologia%20I', 'fisiologiaIList');
     fetchFiles('2º%20Período/Anatomia%20II', 'anatomiaIIList');
     fetchFiles('2º%20Período/Fisiologia%20II', 'fisiologiaIIList');
-    fetchFiles('3o%20Período/Semiologia', 'semiologiaList');
-    fetchFiles('3o%20Período/Patologia', 'patologiaList');
-    fetchFiles('3o%20Período/Parasitologia', 'parasitologiaList');
-    fetchFiles('3o%20Período/Imunologia', 'imunologiaList');
-    fetchFiles('3o%20Período/Microbiologia', 'microbiologiaList');
+    fetchFiles('3ºPeríodo/Semiologia', 'semiologiaList');
+    fetchFiles('3ºPeríodo/Patologia', 'patologiaList');
+    fetchFiles('3ºPeríodo/Parasitologia', 'parasitologiaList');
+    fetchFiles('3ºPeríodo/Imunologia', 'imunologiaList');
+    fetchFiles('3ºPeríodo/Microbiologia', 'microbiologiaList');
 }
