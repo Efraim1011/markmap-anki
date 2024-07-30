@@ -1,27 +1,41 @@
-/* Define o plano de fundo preto */
+/* Variáveis de tema */
+:root {
+    --bg-color-dark: #1c1c1c;
+    --text-color-dark: #e0e0e0;
+    --bg-color-light: #ffffff;
+    --text-color-light: #000000;
+    --primary-color: #ff9800;
+    --secondary-color: #ff5722;
+}
+
+/* Fonte personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Define o plano de fundo e a cor do texto */
 body {
-    background-color: #1c1c1c; /* Cor preta suave */
-    color: #e0e0e0; /* Texto ligeiramente claro para contraste */
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, sans-serif; /* Fonte simples e legível */
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Estiliza o título "Mapas mentais" */
 h1 {
-    background-color: #ff9800; /* Cor do retângulo */
-    color: #1c1c1c; /* Cor do texto */
+    background-color: var(--primary-color);
+    color: var(--bg-color-dark);
     padding: 15px 30px;
-    border-radius: 20px; /* Contornos curvos */
+    border-radius: 20px;
     margin-top: 30px;
-    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3); /* Sombra */
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
 }
 
 /* Estilo dos botões toggle */
 .toggle-btn, .inner-toggle-btn {
-    background: linear-gradient(145deg, #ff9800, #ff5722); /* Gradiente laranja */
-    color: #fff; /* Cor do texto branco */
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
     padding: 10px 25px;
     border-radius: 15px;
     border: none;
@@ -29,22 +43,36 @@ h1 {
     margin: 10px 0;
     font-size: 18px;
     display: inline-block;
-    transition: transform 0.2s ease-in-out; /* Animação ao passar o mouse */
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .toggle-btn:hover, .inner-toggle-btn:hover {
-    transform: scale(1.05); /* Aumenta levemente o tamanho */
+    transform: scale(1.05);
+    background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+}
+
+.toggle-btn:active, .inner-toggle-btn:active {
+    transform: scale(0.95);
 }
 
 /* Estilo do conteúdo toggle */
 .toggle-content {
-    display: none;
-    background-color: #ff9800; /* Cor do fundo */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    background-color: var(--primary-color);
     padding: 20px;
     border-radius: 15px;
     width: fit-content;
     margin: 20px 0;
-    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3); /* Sombra */
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+}
+
+.toggle-content.open {
+    max-height: 1000px;
+    opacity: 1;
 }
 
 /* Estiliza os itens da lista */
@@ -56,16 +84,56 @@ ul li {
 /* Estilo dos botões dentro das listas */
 ul li a {
     display: inline-block;
-    background-color: #1c1c1c; /* Cor preta */
-    color: #ff9800; /* Cor do texto */
+    background-color: var(--bg-color-dark);
+    color: var(--primary-color);
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 5px;
+    border: 1px solid var(--primary-color);
     transition: background-color 0.3s ease, color 0.3s ease;
-    border: 1px solid #ff9800; /* Borda laranja */
 }
 
 ul li a:hover {
-    background-color: #333; /* Cor preta mais clara */
-    color: #fff; /* Texto branco */
+    background-color: #333;
+    color: #fff;
+}
+
+/* Estilo para os ícones */
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Modo claro */
+body.light-mode {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+body.light-mode h1 {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+body.light-mode .toggle-btn, 
+body.light-mode .inner-toggle-btn {
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+    color: var(--bg-color-light);
+}
+
+body.light-mode .toggle-content {
+    background-color: var(--primary-color);
+}
+
+body.light-mode ul li a {
+    background-color: var(--bg-color-light);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+body.light-mode ul li a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
 }
