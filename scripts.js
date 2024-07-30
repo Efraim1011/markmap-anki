@@ -48,11 +48,11 @@ window.onload = function() {
     fetchFiles('1º%20Período/Fisiologia%20I', 'fisiologiaIList');
     fetchFiles('2º%20Período/Anatomia%20II', 'anatomiaIIList');
     fetchFiles('2º%20Período/Fisiologia%20II', 'fisiologiaIIList');
-    fetchFiles('3º%20Período/Semiologia', 'semiologiaList');
-    fetchFiles('3º%20Período/Patologia', 'patologiaList');
-    fetchFiles('3º%20Período/Parasitologia', 'parasitologiaList');
-    fetchFiles('3º%20Período/Imunologia', 'imunologiaList');
-    fetchFiles('3º%20Período/Microbiologia', 'microbiologiaList');
+    fetchFiles('3ºPeríodo/Semiologia', 'semiologiaList');
+    fetchFiles('3ºPeríodo/Patologia', 'patologiaList');
+    fetchFiles('3ºPeríodo/Parasitologia', 'parasitologiaList');
+    fetchFiles('3ºPeríodo/Imunologia', 'imunologiaList');
+    fetchFiles('3ºPeríodo/Microbiologia', 'microbiologiaList');
     fetchFiles('4º%20Período/Farmacologia', 'farmacologiaList');
     fetchFiles('4º%20Período/Epidemiologia', 'epidemiologiaList');
     fetchFiles('4º%20Período/Otorrinolaringologia', 'otorrinolaringologiaList');
