@@ -11,12 +11,19 @@ function toggleVisibility(id) {
 
 async function fetchFiles(folder, elementId) {
     try {
-        const response = await fetch(`https://api.github.com/repos/Efraim1011/markmap-anki/contents/${folder}`);
+        const response = await fetch(`https://api.github.com/repos/Efraim1011/markmap-anki/contents/${folder}`, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json'
+                // Adicione um token de autenticação se necessário
+                // 'Authorization': 'Bearer <your-token>'
+            }
+        });
+
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        const files = await response.json();
 
+        const files = await response.json();
         const list = document.getElementById(elementId);
         list.innerHTML = ''; // Clear existing list items
 
@@ -41,15 +48,15 @@ window.onload = function() {
     fetchFiles('1º%20Período/Fisiologia%20I', 'fisiologiaIList');
     fetchFiles('2º%20Período/Anatomia%20II', 'anatomiaIIList');
     fetchFiles('2º%20Período/Fisiologia%20II', 'fisiologiaIIList');
-    fetchFiles('3ºPeríodo/Semiologia', 'semiologiaList');
-    fetchFiles('3ºPeríodo/Patologia', 'patologiaList');
-    fetchFiles('3ºPeríodo/Parasitologia', 'parasitologiaList');
-    fetchFiles('3ºPeríodo/Imunologia', 'imunologiaList');
-    fetchFiles('3ºPeríodo/Microbiologia', 'microbiologiaList');
+    fetchFiles('3º%20Período/Semiologia', 'semiologiaList');
+    fetchFiles('3º%20Período/Patologia', 'patologiaList');
+    fetchFiles('3º%20Período/Parasitologia', 'parasitologiaList');
+    fetchFiles('3º%20Período/Imunologia', 'imunologiaList');
+    fetchFiles('3º%20Período/Microbiologia', 'microbiologiaList');
     fetchFiles('4º%20Período/Farmacologia', 'farmacologiaList');
     fetchFiles('4º%20Período/Epidemiologia', 'epidemiologiaList');
     fetchFiles('4º%20Período/Otorrinolaringologia', 'otorrinolaringologiaList');
     fetchFiles('4º%20Período/Oftalmologia', 'oftalmologiaList');
     fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
-    fetchFiles('4º%20Período/Saude%20da%20Familia%20IV', 'saudefamiliaivList');
+    fetchFiles('4º%20Período/Saúde%20da%20Família%20IV', 'saudefamiliaivList');
 }
