@@ -1,82 +1,71 @@
 /* Define o plano de fundo preto */
 body {
-    background-color: black;
-    color: white; /* Mantém o texto legível */
+    background-color: #1c1c1c; /* Cor preta suave */
+    color: #e0e0e0; /* Texto ligeiramente claro para contraste */
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+    font-family: Arial, sans-serif; /* Fonte simples e legível */
 }
 
 /* Estiliza o título "Mapas mentais" */
 h1 {
-    background-color: orange; /* Cor do retângulo */
-    color: black; /* Cor do texto */
-    padding: 10px 20px;
-    border-radius: 15px; /* Contornos curvos */
-    display: inline-block;
-    margin-top: 20px; /* Espaçamento superior */
+    background-color: #ff9800; /* Cor do retângulo */
+    color: #1c1c1c; /* Cor do texto */
+    padding: 15px 30px;
+    border-radius: 20px; /* Contornos curvos */
+    margin-top: 30px;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3); /* Sombra */
 }
 
 /* Estilo dos botões toggle */
-.toggle-btn {
-    background-color: orange; /* Cor do fundo */
-    color: black; /* Cor do texto */
-    padding: 10px 20px;
-    border-radius: 15px; /* Contornos curvos */
+.toggle-btn, .inner-toggle-btn {
+    background: linear-gradient(145deg, #ff9800, #ff5722); /* Gradiente laranja */
+    color: #fff; /* Cor do texto branco */
+    padding: 10px 25px;
+    border-radius: 15px;
     border: none;
     cursor: pointer;
-    margin: 10px 0; /* Espaçamento entre os botões */
-    font-size: 16px;
+    margin: 10px 0;
+    font-size: 18px;
     display: inline-block;
+    transition: transform 0.2s ease-in-out; /* Animação ao passar o mouse */
+}
+
+.toggle-btn:hover, .inner-toggle-btn:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
 }
 
 /* Estilo do conteúdo toggle */
 .toggle-content {
-    display: none; /* Esconde o conteúdo por padrão */
-    background-color: orange; /* Cor do fundo */
+    display: none;
+    background-color: #ff9800; /* Cor do fundo */
     padding: 20px;
-    border-radius: 15px; /* Contornos curvos */
-    width: max-content; /* Ajusta à largura do conteúdo */
-    margin: 20px 0; /* Espaçamento vertical */
+    border-radius: 15px;
+    width: fit-content;
+    margin: 20px 0;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3); /* Sombra */
 }
 
 /* Estiliza os itens da lista */
 ul li {
-    margin: 10px 0; /* Espaçamento entre os itens da lista */
-    white-space: nowrap; /* Impede quebra de linha */
+    margin: 10px 0;
+    white-space: nowrap;
 }
 
 /* Estilo dos botões dentro das listas */
 ul li a {
     display: inline-block;
-    background-color: black; /* Cor preta */
-    color: orange; /* Cor do texto */
-    padding: 10px 20px;
+    background-color: #1c1c1c; /* Cor preta */
+    color: #ff9800; /* Cor do texto */
+    padding: 10px 25px;
     text-decoration: none;
-    border-radius: 5px; /* Contornos curvos */
+    border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    border: 1px solid #ff9800; /* Borda laranja */
 }
 
-/* Efeito ao passar o mouse */
 ul li a:hover {
     background-color: #333; /* Cor preta mais clara */
-    color: #ff9800; /* Laranja mais clara */
-}
-
-/* Estilo dos botões internos dos períodos */
-#periodo1 .inner-toggle-btn,
-#periodo2 .inner-toggle-btn,
-#periodo3 .inner-toggle-btn,
-#periodo4 .inner-toggle-btn {
-    background-color: black; /* Cor preta */
-    color: orange; /* Cor do texto */
-    padding: 10px 20px;
-    border-radius: 15px; /* Contornos curvos */
-    border: none;
-    cursor: pointer;
-    margin: 10px 0; /* Espaçamento entre os botões */
-    font-size: 16px;
-    display: block;
-    width: 100%; /* Ocupa toda a largura disponível */
-    text-align: center;
+    color: #fff; /* Texto branco */
 }
