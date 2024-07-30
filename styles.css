@@ -79,6 +79,7 @@ h2 {
     margin: 25px 0;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    z-index: 1; /* Ajuste para garantir que os conteúdos não estejam atrás de outros elementos */
 }
 
 /* Estiliza os itens da lista */
@@ -89,19 +90,21 @@ ul li {
 
 /* Estilo dos botões dentro das listas */
 ul li a {
-    display: inline-block;
-    background-color: var(--bg-color-dark);
-    color: var(--highlight-color);
+    display: inline-block; /* Garante que os links sejam exibidos como blocos em linha */
+    background-color: var(--bg-color-dark); /* Cor preta */
+    color: var(--highlight-color); /* Cor laranja */
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 5px;
-    border: 1px solid var(--highlight-color);
+    border: 1px solid var(--highlight-color); /* Borda laranja */
     transition: background-color 0.3s ease, color 0.3s ease;
+    visibility: visible; /* Assegura que a visibilidade esteja ativa */
+    z-index: 1; /* Garante que os links não estejam atrás de outros elementos */
 }
 
 ul li a:hover {
-    background-color: #333;
-    color: #fff;
+    background-color: #333; /* Cor preta mais clara */
+    color: #fff; /* Texto branco */
 }
 
 /* Estilo para os ícones (opcional) */
