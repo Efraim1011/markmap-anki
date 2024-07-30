@@ -1,7 +1,6 @@
 /* Variáveis de cores */
 :root {
     --bg-color-dark: #1c1c1c;
-    --bg-color-darker: #000;
     --text-color-dark: #e0e0e0;
     --primary-color: #ff9800;
     --secondary-color: #ff5722;
@@ -14,8 +13,8 @@
 
 /* Estilização básica */
 body {
-    background: linear-gradient(180deg, var(--bg-color-dark), var(--bg-color-darker)) no-repeat fixed;
-    color: var(--text-color-dark);
+    background-color: var(--bg-color-dark); /* Fundo escuro */
+    color: var(--text-color-dark); /* Cor do texto claro */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,8 +52,6 @@ h1 {
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
     text-align: center;
-    visibility: visible; /* Assegura que o botão esteja visível */
-    z-index: 1;
 }
 
 .toggle-btn:hover, .inner-toggle-btn:hover {
@@ -77,16 +74,17 @@ h1 {
     margin: 25px 0;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    z-index: 1;
 }
 
 /* Estiliza os itens da lista */
 ul li {
     margin: 10px 0;
     white-space: nowrap;
+    visibility: visible;
+    display: block;
 }
 
-/* Estilo dos botões dentro das listas */
+/* Estilo dos links para mapas mentais */
 ul li a {
     display: block;
     background-color: var(--bg-color-dark);
@@ -96,8 +94,7 @@ ul li a {
     border-radius: 5px;
     border: 1px solid var(--highlight-color);
     transition: background-color 0.3s ease, color 0.3s ease;
-    visibility: visible;
-    z-index: 1;
+    visibility: visible; /* Assegura visibilidade */
 }
 
 ul li a:hover {
@@ -105,29 +102,7 @@ ul li a:hover {
     color: #fff;
 }
 
-/* Estilo para os ícones (opcional) */
-.icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
 /* Customização do cursor */
 a, .toggle-btn, .inner-toggle-btn {
     cursor: pointer;
-}
-
-/* Outros ajustes de layout e espaçamento */
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.conteudo-principal {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
 }
