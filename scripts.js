@@ -65,21 +65,21 @@ async function fetchFiles(folder, elementId) {
 window.onload = function() {
     console.log("window.onload executado!");
     const folders = [
-        { path: '1º Período/Anatomia I', id: 'anatomiaIList' },
-        { path: '1º Período/Fisiologia I', id: 'fisiologiaIList' },
-        { path: '2º Período/Anatomia II', id: 'anatomiaIIList' },
-        { path: '2º Período/Fisiologia II', id: 'fisiologiaIIList' },
-        { path: '3ºPeríodo/Semiologia', id: 'semiologiaList' },
-        { path: '3ºPeríodo/Patologia', id: 'patologiaList' },
-        { path: '3ºPeríodo/Parasitologia', id: 'parasitologiaList' },
-        { path: '3ºPeríodo/Imunologia', id: 'imunologiaList' },
-        { path: '3ºPeríodo/Microbiologia', id: 'microbiologiaList' },
-        { path: '4º Período/Farmacologia', id: 'farmacologiaList' },
-        { path: '4º Período/Epidemiologia', id: 'epidemiologiaList' },
-        { path: '4º Período/Otorrinolaringologia', id: 'otorrinolaringologiaList' },
-        { path: '4º Período/Oftalmologia', id: 'oftalmologiaList' },
-        { path: '4º Período/PAPM IV', id: 'papmivList' },
-        { path: '4º Período/Saúde da Família IV', id: 'saudefamiliaivList' }
+        { path: '1o_Periodo/Anatomia_I', id: 'anatomiaIList' },
+        { path: '1o_Periodo/Fisiologia_I', id: 'fisiologiaIList' },
+        { path: '2o_Periodo/Anatomia_II', id: 'anatomiaIIList' },
+        { path: '2o_Periodo/Fisiologia_II', id: 'fisiologiaIIList' },
+        { path: '3o_Periodo/Semiologia', id: 'semiologiaList' },
+        { path: '3o_Periodo/Patologia', id: 'patologiaList' },
+        { path: '3o_Periodo/Parasitologia', id: 'parasitologiaList' },
+        { path: '3o_Periodo/Imunologia', id: 'imunologiaList' },
+        { path: '3o_Periodo/Microbiologia', id: 'microbiologiaList' },
+        { path: '4o_Periodo/Farmacologia', id: 'farmacologiaList' },
+        { path: '4o_Periodo/Epidemiologia', id: 'epidemiologiaList' },
+        { path: '4o_Periodo/Otorrinolaringologia', id: 'otorrinolaringologiaList' },
+        { path: '4o_Periodo/Oftalmologia', id: 'oftalmologiaList' },
+        { path: '4o_Periodo/PAPM_IV', id: 'papmivList' },
+        { path: '4o_Periodo/Saude_da_Familia_IV', id: 'saudefamiliaivList' }
     ];
     
     folders.forEach(folder => fetchFiles(folder.path, folder.id));
