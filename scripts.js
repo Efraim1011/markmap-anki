@@ -11,76 +11,52 @@ function toggleVisibility(id) {
 
 async function fetchFiles(folder, elementId) {
     try {
-        const encodedFolder = encodeURIComponent(folder);
-        const apiUrl = `https://api.github.com/repos/Efraim1011/markmap-anki/contents/${encodedFolder}`;
-        console.log(`Buscando arquivos em: ${apiUrl}`);
-        
-        const response = await fetch(apiUrl, {
+        const response = await fetch(`https://api.github.com/repos/Efraim1011/markmap-anki/contents/${folder}`, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
+                // Adicione um token de autenticação se necessário
+                // 'Authorization': 'Bearer <your-token>'
             }
         });
-        
+
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error('Network response was not ok');
         }
-        
+
         const files = await response.json();
-        console.log(`Arquivos encontrados em ${folder}:`, files);
-        
         const list = document.getElementById(elementId);
-        if (!list) {
-            console.error(`Elemento com ID ${elementId} não encontrado.`);
-            return;
-        }
-        
-        list.innerHTML = '';
-        
-        const htmlFiles = files.filter(file => file.type === "file" && file.name.endsWith('.html'));
-        
-        if (htmlFiles.length === 0) {
-            console.log(`Nenhum arquivo HTML encontrado em ${folder}`);
-            list.innerHTML = '<li>Nenhum mapa mental disponível</li>';
-            return;
-        }
-        
-        htmlFiles.forEach(file => {
-            const listItem = document.createElement('li');
-            const link = document.createElement('a');
-            link.href = file.html_url.replace('github.com', 'raw.githubusercontent.com').replace('/blob', '');
-            link.textContent = file.name.replace('.html', '');
-            link.target = '_blank';
-            listItem.appendChild(link);
-            list.appendChild(listItem);
+        list.innerHTML = ''; // Clear existing list items
+
+        files.forEach(file => {
+            if (file.name.endsWith('.html')) {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = `${folder}/${file.name}`;
+                link.textContent = file.name.replace(/%20/g, ' ');
+                listItem.appendChild(link);
+                list.appendChild(listItem);
+            }
         });
     } catch (error) {
-        console.error(`Erro ao buscar arquivos para ${folder}:`, error);
-        const list = document.getElementById(elementId);
-        if (list) {
-            list.innerHTML = `<li>Erro ao carregar mapas mentais: ${error.message}</li>`;
-        }
+        console.error('Error fetching files:', error);
     }
 }
 
 window.onload = function() {
     console.log("window.onload executado!");
-    const folders = [
-        { path: '1o_Periodo/Anatomia_I', id: 'anatomiaIList' },
-        { path: '1o_Periodo/Fisiologia_I', id: 'fisiologiaIList' },
-        { path: '2o_Periodo/Anatomia_II', id: 'anatomiaIIList' },
-        { path: '2o_Periodo/Fisiologia_II', id: 'fisiologiaIIList' },
-        { path: '3o_Periodo/Semiologia', id: 'semiologiaList' },
-        { path: '3o_Periodo/Patologia', id: 'patologiaList' },
-        { path: '3o_Periodo/Parasitologia', id: 'parasitologiaList' },
-        { path: '3o_Periodo/Imunologia', id: 'imunologiaList' },
-        { path: '3o_Periodo/Microbiologia', id: 'microbiologiaList' },
-        { path: '4o_Periodo/Farmacologia', id: 'farmacologiaList' },
-        { path: '4o_Periodo/Epidemiologia', id: 'epidemiologiaList' },
-        { path: '4o_Periodo/Otorrinolaringologia', id: 'otorrinolaringologiaList' },
-        { path: '4o_Periodo/Oftalmologia', id: 'oftalmologiaList' },
-        { path: '4o_Periodo/PAPM_IV', id: 'papmivList' },
-        { path: '4o_Periodo/Saude_da_Familia_IV', id: 'saudefamiliaivList' }
-    ];
-    
-    folders.forEach(folder => fetchFiles(folder.path, folder.id));
+    fetchFiles('1º%20Período/Anatomia%20I', 'anatomiaIList');
+    fetchFiles('1º%20Período/Fisiologia%20I', 'fisiologiaIList');
+    fetchFiles('2º%20Período/Anatomia%20II', 'anatomiaIIList');
+    fetchFiles('2º%20Período/Fisiologia%20II', 'fisiologiaIIList');
+    fetchFiles('3ºPeríodo/Semiologia', 'semiologiaList');
+    fetchFiles('3ºPeríodo/Patologia', 'patologiaList');
+    fetchFiles('3ºPeríodo/Parasitologia', 'parasitologiaList');
+    fetchFiles('3ºPeríodo/Imunologia', 'imunologiaList');
+    fetchFiles('3ºPeríodo/Microbiologia', 'microbiologiaList');
+    fetchFiles('4º%20Período/Farmacologia', 'farmacologiaList');
+    fetchFiles('4º%20Período/Epidemiologia', 'epidemiologiaList');
+    fetchFiles('4º%20Período/Otorrinolaringologia', 'otorrinolaringologiaList');
+    fetchFiles('4º%20Período/Oftalmologia', 'oftalmologiaList');
+    fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
+    fetchFiles('4º%20Período/Saúde%20da%20Família%20IV', 'saudefamiliaivList');
 }
