@@ -48,19 +48,19 @@ async function fetchFiles(folder, elementId) {
 
 window.onload = function() {
     console.log("window.onload executado!");
-    fetchFiles('1º Período/Anatomia I', 'anatomiaIList');
-    fetchFiles('1º Período/Fisiologia I', 'fisiologiaIList');
-    fetchFiles('2º Período/Anatomia II', 'anatomiaIIList');
-    fetchFiles('2º Período/Fisiologia II', 'fisiologiaIIList');
+    fetchFiles('1º%20Período/Anatomia%20I', 'anatomiaIList');
+    fetchFiles('1º%20Período/Fisiologia%20I', 'fisiologiaIList');
+    fetchFiles('2º%20Período/Anatomia%20II', 'anatomiaIIList');
+    fetchFiles('2º%20Período/Fisiologia%20II', 'fisiologiaIIList');
     fetchFiles('3ºPeríodo/Semiologia', 'semiologiaList');
     fetchFiles('3ºPeríodo/Patologia', 'patologiaList');
     fetchFiles('3ºPeríodo/Parasitologia', 'parasitologiaList');
     fetchFiles('3ºPeríodo/Imunologia', 'imunologiaList');
     fetchFiles('3ºPeríodo/Microbiologia', 'microbiologiaList');
-    fetchFiles('4º Período/Farmacologia', 'farmacologiaList');
-    fetchFiles('4º Período/Epidemiologia', 'epidemiologiaList');
-    fetchFiles('4º Período/Otorrinolaringologia', 'otorrinolaringologiaList');
-    fetchFiles('4º Período/Oftalmologia', 'oftalmologiaList');
-    fetchFiles('4º Período/PAPM IV', 'papmivList');
-    fetchFiles('4º Período/Saúde da Família IV', 'saudefamiliaivList');
+    fetchFiles('4º%20Período/Farmacologia', 'farmacologiaList');
+    fetchFiles('4º%20Período/Epidemiologia', 'epidemiologiaList');
+    fetchFiles('4º%20Período/Otorrinolaringologia', 'otorrinolaringologiaList');
+    fetchFiles('4º%20Período/Oftalmologia', 'oftalmologiaList');
+    fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
+    fetchFiles('4º%20Período/Saúde%20da%20Família%20IV', 'saudefamiliaivList');
 }
