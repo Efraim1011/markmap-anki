@@ -22,6 +22,7 @@ async function fetchFiles(folder, elementId) {
         }
 
         const files = await response.json();
+        console.log(`Arquivos encontrados em ${folder}:`, files);
         const list = document.getElementById(elementId);
         list.innerHTML = ''; // Limpa os itens da lista existentes
 
@@ -29,7 +30,7 @@ async function fetchFiles(folder, elementId) {
             if (file.type === "file" && file.name.endsWith('.html')) {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
-                link.href = `${file.download_url}`;
+                link.href = file.html_url;
                 link.textContent = decodeURIComponent(file.name);
                 link.target = '_blank'; // Abre o link em uma nova aba
                 listItem.appendChild(link);
@@ -43,19 +44,19 @@ async function fetchFiles(folder, elementId) {
 
 window.onload = function() {
     console.log("window.onload executado!");
-    fetchFiles('1º%20Período/Anatomia%20I', 'anatomiaIList');
-    fetchFiles('1º%20Período/Fisiologia%20I', 'fisiologiaIList');
-    fetchFiles('2º%20Período/Anatomia%20II', 'anatomiaIIList');
-    fetchFiles('2º%20Período/Fisiologia%20II', 'fisiologiaIIList');
-    fetchFiles('3ºPeríodo/Semiologia', 'semiologiaList');
-    fetchFiles('3ºPeríodo/Patologia', 'patologiaList');
-    fetchFiles('3ºPeríodo/Parasitologia', 'parasitologiaList');
-    fetchFiles('3ºPeríodo/Imunologia', 'imunologiaList');
-    fetchFiles('3ºPeríodo/Microbiologia', 'microbiologiaList');
-    fetchFiles('4º%20Período/Farmacologia', 'farmacologiaList');
-    fetchFiles('4º%20Período/Epidemiologia', 'epidemiologiaList');
-    fetchFiles('4º%20Período/Otorrinolaringologia', 'otorrinolaringologiaList');
-    fetchFiles('4º%20Período/Oftalmologia', 'oftalmologiaList');
-    fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
-    fetchFiles('4º%20Período/Saúde%20da%20Família%20IV', 'saudefamiliaivList');
+    fetchFiles('1%C2%BA%20Per%C3%ADodo/Anatomia%20I', 'anatomiaIList');
+    fetchFiles('1%C2%BA%20Per%C3%ADodo/Fisiologia%20I', 'fisiologiaIList');
+    fetchFiles('2%C2%BA%20Per%C3%ADodo/Anatomia%20II', 'anatomiaIIList');
+    fetchFiles('2%C2%BA%20Per%C3%ADodo/Fisiologia%20II', 'fisiologiaIIList');
+    fetchFiles('3%C2%BAPer%C3%ADodo/Semiologia', 'semiologiaList');
+    fetchFiles('3%C2%BAPer%C3%ADodo/Patologia', 'patologiaList');
+    fetchFiles('3%C2%BAPer%C3%ADodo/Parasitologia', 'parasitologiaList');
+    fetchFiles('3%C2%BAPer%C3%ADodo/Imunologia', 'imunologiaList');
+    fetchFiles('3%C2%BAPer%C3%ADodo/Microbiologia', 'microbiologiaList');
+    fetchFiles('4%C2%BA%20Per%C3%ADodo/Farmacologia', 'farmacologiaList');
+    fetchFiles('4%C2%BA%20Per%C3%ADodo/Epidemiologia', 'epidemiologiaList');
+    fetchFiles('4%C2%BA%20Per%C3%ADodo/Otorrinolaringologia', 'otorrinolaringologiaList');
+    fetchFiles('4%C2%BA%20Per%C3%ADodo/Oftalmologia', 'oftalmologiaList');
+    fetchFiles('4%C2%BA%20Per%C3%ADodo/PAPM%20IV', 'papmivList');
+    fetchFiles('4%C2%BA%20Per%C3%ADodo/Sa%C3%BAde%20da%20Fam%C3%ADlia%20IV', 'saudefamiliaivList');
 }
