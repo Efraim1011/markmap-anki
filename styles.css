@@ -8,8 +8,8 @@
     --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Fontes personalizadas */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+/* Fonte personalizada */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* Estilização básica */
 body {
@@ -18,7 +18,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Open Sans', sans-serif; /* Fonte padrão para o corpo do texto */
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.5px;
@@ -32,14 +32,13 @@ h1 {
     color: #fff;
     padding: 15px 30px;
     border-radius: 20px;
-    margin: 30px 0;
+    margin: 30px 0; /* Ajusta o espaçamento para destacar o título */
     font-size: 24px;
     font-weight: 700;
     text-align: center;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     display: inline-block;
-    font-family: 'Roboto', sans-serif; /* Fonte para o título */
 }
 
 /* Efeito de hover para o título */
@@ -64,7 +63,6 @@ h1:hover {
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
     text-align: center;
-    font-family: 'Roboto', sans-serif; /* Fonte para os botões */
 }
 
 .toggle-btn:hover, .inner-toggle-btn:hover {
@@ -86,13 +84,7 @@ h1:hover {
     width: fit-content;
     margin: 25px 0;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Animação de entrada */
-}
-
-/* Mostra o conteúdo quando visível */
-.toggle-content[style*="display: block"] {
-    opacity: 1;
-    max-height: 1000px; /* Valor grande o suficiente para exibir todo o conteúdo */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 }
 
 /* Estiliza os itens da lista */
@@ -113,59 +105,15 @@ ul li a {
     border-radius: 5px;
     border: 1px solid var(--highlight-color);
     transition: background-color 0.3s ease, color 0.3s ease;
-    visibility: visible;
+    visibility: visible; /* Assegura visibilidade */
 }
 
 ul li a:hover {
     background-color: #333;
     color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Customização do cursor */
 a, .toggle-btn, .inner-toggle-btn {
     cursor: pointer;
-}
-
-/* Estilo para ícones */
-.icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-/* Estilo do menu fixo */
-.menu-fixo {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: var(--primary-color);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.menu-fixo a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 0;
-    font-weight: 600;
-}
-
-/* Ajustes responsivos */
-@media (max-width: 768px) {
-    h1, .toggle-btn, .inner-toggle-btn {
-        font-size: 16px;
-        padding: 8px 15px;
-    }
-
-    .menu-fixo {
-        top: auto;
-        bottom: 10px;
-        left: 10px;
-        right: auto;
-    }
 }
