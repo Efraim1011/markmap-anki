@@ -9,11 +9,14 @@ function toggleVisibility(id) {
     }
 }
 
+
 async function fetchFiles(folder, elementId) {
     try {
         const response = await fetch(`https://api.github.com/repos/Efraim1011/markmap-anki/contents/${folder}`, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
+                // Adicione um token de autenticação se necessário
+                // 'Authorization': 'Bearer <your-token>'
             }
         });
 
