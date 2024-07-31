@@ -11,7 +11,7 @@ function toggleVisibility(id) {
 
 async function fetchFiles(folder, elementId) {
     try {
-        const encodedFolder = folder.replace(/ /g, '%20').replace(/º/g, '%C2%BA').replace(/ã/g, '%C3%A3');
+        const encodedFolder = encodeURIComponent(folder);
         const apiUrl = `https://api.github.com/repos/Efraim1011/markmap-anki/contents/${encodedFolder}`;
         console.log(`Buscando arquivos em: ${apiUrl}`);
         
@@ -22,7 +22,7 @@ async function fetchFiles(folder, elementId) {
         });
         
         if (!response.ok) {
-            throw new Error(`Erro ao buscar arquivos do GitHub: ${response.statusText}`);
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         
         const files = await response.json();
@@ -47,18 +47,17 @@ async function fetchFiles(folder, elementId) {
         htmlFiles.forEach(file => {
             const listItem = document.createElement('li');
             const link = document.createElement('a');
-            const encodedFileName = file.name.replace(/ /g, '%20');
-            link.href = `https://efraim1011.github.io/markmap-anki/${encodedFolder}/${encodedFileName}`;
+            link.href = file.html_url.replace('github.com', 'raw.githubusercontent.com').replace('/blob', '');
             link.textContent = file.name.replace('.html', '');
             link.target = '_blank';
             listItem.appendChild(link);
             list.appendChild(listItem);
         });
     } catch (error) {
-        console.error('Erro ao buscar arquivos:', error);
+        console.error(`Erro ao buscar arquivos para ${folder}:`, error);
         const list = document.getElementById(elementId);
         if (list) {
-            list.innerHTML = '<li>Erro ao carregar mapas mentais. Por favor, tente novamente mais tarde.</li>';
+            list.innerHTML = `<li>Erro ao carregar mapas mentais: ${error.message}</li>`;
         }
     }
 }
