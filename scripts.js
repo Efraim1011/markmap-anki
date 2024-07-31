@@ -14,31 +14,30 @@ async function fetchFiles(folder, elementId) {
         const response = await fetch(`https://api.github.com/repos/Efraim1011/markmap-anki/contents/${folder}`, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
-                // Adicione um token de autenticação se necessário
-                // 'Authorization': 'Bearer <your-token>'
             }
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Erro ao buscar arquivos do GitHub: ${response.statusText}`);
         }
 
         const files = await response.json();
         const list = document.getElementById(elementId);
-        list.innerHTML = ''; // Clear existing list items
+        list.innerHTML = ''; // Limpa os itens da lista existentes
 
         files.forEach(file => {
-            if (file.name.endsWith('.html')) {
+            if (file.type === "file" && file.name.endsWith('.html')) {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
-                link.href = `${folder}/${file.name}`;
-                link.textContent = file.name.replace(/%20/g, ' ');
+                link.href = `${file.download_url}`;
+                link.textContent = decodeURIComponent(file.name);
+                link.target = '_blank'; // Abre o link em uma nova aba
                 listItem.appendChild(link);
                 list.appendChild(listItem);
             }
         });
     } catch (error) {
-        console.error('Error fetching files:', error);
+        console.error('Erro ao buscar arquivos:', error);
     }
 }
 
