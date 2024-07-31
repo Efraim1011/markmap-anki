@@ -20,25 +20,26 @@ async function fetchFiles(folder, elementId) {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error(`Erro ao buscar arquivos do GitHub: ${response.statusText}`);
         }
 
         const files = await response.json();
         const list = document.getElementById(elementId);
-        list.innerHTML = ''; // Clear existing list items
+        list.innerHTML = ''; // Limpa os itens da lista existentes
 
         files.forEach(file => {
             if (file.name.endsWith('.html')) {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
                 link.href = `${folder}/${file.name}`;
-                link.textContent = file.name.replace(/%20/g, ' ');
+                link.textContent = decodeURIComponent(file.name);
+                link.target = '_blank'; // Abre o link em uma nova aba
                 listItem.appendChild(link);
                 list.appendChild(listItem);
             }
         });
     } catch (error) {
-        console.error('Error fetching files:', error);
+        console.error('Erro ao buscar arquivos:', error);
     }
 }
 
