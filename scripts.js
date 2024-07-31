@@ -11,27 +11,35 @@ function toggleVisibility(id) {
 
 async function fetchFiles(folder, elementId) {
     try {
-        const response = await fetch(`https://api.github.com/repos/Efraim1011/markmap-anki/contents/${folder}`, {
+        // Construa o URL da API do GitHub
+        const apiUrl = `https://api.github.com/repos/Efraim1011/markmap-anki/contents/${folder}`;
+        console.log(`Buscando arquivos em: ${apiUrl}`);
+        
+        // Fetch os dados do repositório GitHub
+        const response = await fetch(apiUrl, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
             }
         });
 
+        // Verificação de resposta
         if (!response.ok) {
             throw new Error(`Erro ao buscar arquivos do GitHub: ${response.statusText}`);
         }
 
+        // Parse dos arquivos retornados
         const files = await response.json();
         console.log(`Arquivos encontrados em ${folder}:`, files);
         const list = document.getElementById(elementId);
         list.innerHTML = ''; // Limpa os itens da lista existentes
 
+        // Loop para adicionar links na lista
         files.forEach(file => {
             if (file.type === "file" && file.name.endsWith('.html')) {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
                 link.href = file.html_url;
-                link.textContent = decodeURIComponent(file.name);
+                link.textContent = decodeURIComponent(file.name.replace(/%20/g, ' '));
                 link.target = '_blank'; // Abre o link em uma nova aba
                 listItem.appendChild(link);
                 list.appendChild(listItem);
