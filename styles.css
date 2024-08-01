@@ -65,6 +65,12 @@ h1:hover {
     font-weight: 600;
     text-align: center;
     font-family: 'Roboto', sans-serif; /* Fonte para os botões */
+    position: absolute; /* Permite que o elemento seja movido livremente */
+}
+
+/* Adiciona a classe draggable para permitir arrastar */
+.draggable {
+    cursor: move; /* Mostra um cursor de movimento quando sobre o elemento */
 }
 
 .toggle-btn:hover, .inner-toggle-btn:hover {
