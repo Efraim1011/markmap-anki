@@ -84,15 +84,23 @@ h1:hover {
     padding: 20px;
     border-radius: 15px;
     width: fit-content;
-    margin: 25px 0;
+    margin: 25px 0; /* Aumenta o espaçamento entre os elementos */
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Animação de entrada */
+    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do container */
+    position: relative; /* Define o posicionamento relativo para ajuste de z-index */
+    z-index: 1; /* Eleva o conteúdo acima dos botões toggle */
 }
 
-/* Mostra o conteúdo quando visível */
-.toggle-content[style*="display: block"] {
-    opacity: 1;
-    max-height: 1000px; /* Valor grande o suficiente para exibir todo o conteúdo */
+/* Ajuste para garantir que o conteúdo não ultrapasse os limites do elemento pai */
+.toggle-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.toggle-content li {
+    margin: 5px 0;
 }
 
 /* Estiliza os itens da lista */
