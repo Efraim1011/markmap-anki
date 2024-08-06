@@ -59,5 +59,5 @@ window.onload = function() {
     fetchFiles('4º%20Período/Oftalmologia', 'oftalmologiaList');
     fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
     fetchFiles('4º%20Período/Saúde%20da%20Família%20IV', 'saudefamiliaivList');
-    fetchFiles('4º%20Período/Fundamentos%20da%20cirurgia', 'fundamentoscirurgiaList');
+    fetchFiles('4º%20Período/Fundamentos%20da%20cirurgia', 'fundamentosCirurgiaList');
 }
