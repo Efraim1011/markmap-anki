@@ -14,8 +14,6 @@ async function fetchFiles(folder, elementId) {
         const response = await fetch(`https://api.github.com/repos/Efraim1011/markmap-anki/contents/${folder}`, {
             headers: {
                 'Accept': 'application/vnd.github.v3+json'
-                // Adicione um token de autenticação se necessário
-                // 'Authorization': 'Bearer <your-token>'
             }
         });
 
@@ -61,4 +59,5 @@ window.onload = function() {
     fetchFiles('4º%20Período/Oftalmologia', 'oftalmologiaList');
     fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
     fetchFiles('4º%20Período/Saúde%20da%20Família%20IV', 'saudefamiliaivList');
+    fetchFiles('4º%20Período/Fundamentos%20da%20cirurgia', 'fundamentoscirurgiaList');
 }
