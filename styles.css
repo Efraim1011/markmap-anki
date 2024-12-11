@@ -26,7 +26,7 @@ body {
     padding: 20px;
 }
 
-/* Contêiner principal que engloba o título, os botões de período e todo o conteúdo */
+/* Contêiner principal estreito e com fundo bege para envolver tudo */
 .main-container {
     background-color: beige;
     border-radius: 20px;
@@ -37,39 +37,39 @@ body {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
 }
 
-/* Estiliza o título "Mapas mentais" */
-h1 {
+/* Barra superior com o botão Mapas Mentais e os botões dos períodos em linha */
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Ajuste a justificação conforme desejado 
+       Se quiser que se estendam até o outro lado da tela, use space-between.
+       Caso queira apenas em linha um ao lado do outro, use flex-start. */
+    justify-content: space-between;
+}
+
+/* Botão "Mapas mentais" (no lugar indicado pelo círculo vermelho) */
+.top-bar h1 {
     background-color: #800000; /* Vinho */
     color: #fff; /* Branco */
     padding: 15px 30px;
     border-radius: 20px;
-    margin: 30px 0;
     font-size: 24px;
     font-weight: 700;
     text-align: center;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
-    display: inline-block;
     font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
+    cursor: pointer; /* Agora se comporta como botão */
 }
 
-/* Ao passar o mouse sobre o título, apenas efeito de scale e sombra */
-h1:hover {
+.top-bar h1:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-/* Container para organizar os botões dos períodos em linha */
-.period-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    margin: 30px 0;
-}
-
-/* Estilo dos botões toggle dos períodos (primeiro nível), em bege com texto vinho */
+/* Botões dos períodos em bege (texto vinho), dispostos em linha após o Mapas Mentais */
 .toggle-btn {
     background-color: beige !important; /* Fundo bege */
     color: #800000 !important; /* Texto vinho */
@@ -84,6 +84,7 @@ h1:hover {
     font-weight: 600;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
 }
 
 .toggle-btn:hover {
@@ -96,7 +97,7 @@ h1:hover {
     transform: translateY(1px);
 }
 
-/* Estilo dos botões toggle das disciplinas (segundo nível) em vinho com texto branco */
+/* Botões das disciplinas em vinho (texto branco), ao clicar eles aparecem DESCENDO, não horizontal */
 .inner-toggle-btn {
     background-color: #800000 !important; /* Fundo vinho */
     color: #fff !important; /* Texto branco */
@@ -112,6 +113,7 @@ h1:hover {
     font-weight: 600;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    white-space: nowrap;
 }
 
 .inner-toggle-btn:hover {
@@ -124,7 +126,9 @@ h1:hover {
     transform: translateY(1px);
 }
 
-/* Estilo do conteúdo toggle (disciplinas e mapas), fundo bege, texto vinho */
+/* O conteúdo que aparece ao clicar (disciplinas, mapas) DESCE verticalmente. 
+   Fundo bege, texto vinho, 
+   Ao abrir, o contêiner principal .main-container se expande verticalmente acompanhando o conteúdo. */
 .toggle-content {
     display: none;
     background-color: beige !important; /* Fundo bege */
@@ -137,7 +141,7 @@ h1:hover {
     overflow: hidden;
 }
 
-/* Ajuste para lista interna */
+/* Listas internas dos mapas mentais */
 .toggle-content ul {
     margin: 0;
     padding: 0;
@@ -148,7 +152,7 @@ h1:hover {
     margin: 5px 0;
 }
 
-/* Links para mapas mentais (terceiro nível), fundo vinho e texto branco */
+/* Links para os mapas mentais (vinho com texto branco) */
 ul li a {
     display: inline-block;
     background-color: #800000 !important; /* Fundo vinho */
@@ -158,6 +162,7 @@ ul li a {
     border-radius: 15px;
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
+    white-space: nowrap;
 }
 
 ul li a:hover {
@@ -167,11 +172,11 @@ ul li a:hover {
 }
 
 /* Customização do cursor */
-a, .toggle-btn, .inner-toggle-btn {
+a, .toggle-btn, .inner-toggle-btn, h1 {
     cursor: pointer;
 }
 
-/* Estilo para ícones */
+/* Estilo para ícones (se necessário) */
 .icon {
     width: 20px;
     height: 20px;
@@ -179,7 +184,7 @@ a, .toggle-btn, .inner-toggle-btn {
     vertical-align: middle;
 }
 
-/* Estilo do menu fixo, caso exista */
+/* Estilo do menu fixo (se existir) */
 .menu-fixo {
     position: fixed;
     top: 10px;
@@ -205,9 +210,9 @@ a, .toggle-btn, .inner-toggle-btn {
         padding: 8px 15px;
     }
 
-    .period-container {
+    .top-bar {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .main-container {
