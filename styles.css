@@ -29,29 +29,30 @@ body {
     position: relative; /* Permite pseudo-elemento absoluto */
 }
 
-/* Fundo retangular bege por fora de todos os botões */
+/* Fundo retangular bege por fora de todos os botões, mais estreito */
 body::before {
     content: "";
     position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 60%; /* Mais estreito */
     min-height: 90vh;
     background-color: beige;
     border-radius: 20px;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
-    z-index: 1; /* Coloca o retângulo atrás do conteúdo */
+    z-index: -1; /* Coloca o retângulo atrás do conteúdo para que os botões apareçam */
 }
 
 /* Container que envolve todos os botões */
 .buttons-container {
-    background-color: beige;
+    position: relative;
+    z-index: 2;
+    /* Remover o fundo para não conflitar com o retângulo atrás, se desejar deixá-los sobre o bege */
+    /* background-color: beige; */
     border-radius: 20px;
     padding: 20px;
     width: fit-content;
-    position: relative;
-    z-index: 2;
 }
 
 /* Estiliza o título "Mapas mentais" */
@@ -95,6 +96,8 @@ h1:hover {
     font-weight: 600;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    position: relative;
+    z-index: 2;
 }
 
 .toggle-btn:hover, .inner-toggle-btn:hover {
