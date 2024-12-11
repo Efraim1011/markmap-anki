@@ -37,7 +37,15 @@ body {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
 }
 
-/* O título "Mapas mentais" como um botão com fundo vinho e letras brancas */
+/* Barra superior (Mapas Mentais + períodos), todos em linha */
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+/* Botão "Mapas mentais" */
 h1 {
     background-color: #800000 !important; /* fundo vinho */
     color: #fff !important; /* texto branco */
@@ -49,10 +57,9 @@ h1 {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
     font-family: 'Roboto', sans-serif;
-    display: inline-block;
-    cursor: pointer;
-    margin-bottom: 20px;
     white-space: nowrap;
+    cursor: pointer;
+    margin: 0; /* Remover margens padrão */
 }
 
 h1:hover {
@@ -60,12 +67,7 @@ h1:hover {
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-/* Botões dos períodos em linha, com espaço entre eles */
-.period-buttons {
-    display: inline-block;
-    vertical-align: middle;
-}
-
+/* Botões dos períodos em bege (texto vinho) em linha, à direita de "Mapas Mentais" */
 .toggle-btn {
     background-color: beige !important; /* Fundo bege */
     color: #800000 !important; /* Texto vinho */
@@ -74,18 +76,12 @@ h1:hover {
     border: none;
     cursor: pointer;
     font-size: 18px;
-    display: inline-block;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     white-space: nowrap;
-    margin-right: 20px; /* Espaço entre os botões */
-}
-
-.toggle-btn:last-child {
-    margin-right: 0;
 }
 
 .toggle-btn:hover {
@@ -182,11 +178,16 @@ a, .toggle-btn, .inner-toggle-btn, h1 {
         padding: 8px 15px;
     }
 
-    .toggle-btn {
-        margin-right: 10px;
-    }
-
     .main-container {
         width: 95%;
+    }
+
+    .top-bar {
+        flex-wrap: wrap;
+    }
+
+    .toggle-btn {
+        margin-right: 10px;
+        margin-bottom: 10px;
     }
 }
