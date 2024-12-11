@@ -104,7 +104,7 @@ body {
     transform: translateY(1px);
 }
 
-/* Botões das disciplinas em vinho (texto branco), descendo verticalmente */
+/* Botões das disciplinas em vinho (texto branco), alinhados à esquerda */
 .inner-toggle-btn {
     background-color: #800000 !important; /* Vinho */
     color: #fff !important; /* Texto branco */
@@ -112,7 +112,7 @@ body {
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    margin: 15px auto; /* Espaçamento superior e inferior, centraliza horizontalmente */
+    margin: 15px 0; /* Remove a centralização horizontal */
     font-size: 18px;
     display: block; /* Altera de inline-block para block para empilhar verticalmente */
     width: 200px; /* Define uma largura fixa; ajuste conforme necessário */
@@ -134,6 +134,14 @@ body {
     transform: translateY(1px);
 }
 
+/* Media Query para ajustar a largura dos botões das disciplinas em telas maiores */
+@media (min-width: 769px) {
+    .inner-toggle-btn {
+        width: 100%; /* Ocupa toda a largura do contêiner */
+        max-width: 300px; /* Limita a largura máxima, ajuste conforme necessário */
+    }
+}
+
 /* O conteúdo que aparece ao clicar (disciplinas, mapas) desce verticalmente */
 .toggle-content {
     display: none;
@@ -145,7 +153,7 @@ body {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     overflow: hidden;
-    text-align: left; /* Ajuste para o conteúdo interno */
+    text-align: left; /* Alinha o conteúdo à esquerda */
 }
 
 /* Lista interna dos mapas mentais */
@@ -203,5 +211,6 @@ a, .toggle-btn, .inner-toggle-btn, h1 {
     /* Ajustar a largura dos botões das disciplinas em telas menores */
     .inner-toggle-btn {
         width: 100%; /* Ocupa toda a largura disponível */
+        max-width: none; /* Remove a largura máxima */
     }
 }
