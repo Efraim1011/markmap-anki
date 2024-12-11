@@ -13,43 +13,28 @@
 
 /* Estilização básica */
 body {
-    background-image: url('https://files.oaiusercontent.com/file-UXA62CDE1fwnpBPneJ3iFq?se=2024-12-11T14%3A59%3A19Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dac3027fc-1301-47e6-b65f-c379fb619ccd.webp&sig=KMqkKAoUFh7Qyieez16s4iWw1p7pzLs%2BTBcbgsxUKtI%3D'); /* Imagem de fundo criada por IA */
+    background-image: url('minha_imagem_criada_IA.jpg'); /* Imagem de fundo criada por IA */
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--text-color-dark);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.5px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
     padding: 20px;
-    position: relative;
 }
 
-/* Removemos o body::before e passamos o fundo bege para o container dos botões */
-.buttons-container {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    width: fit-content;
-}
-
-/* Fundo bege que envolve todos os botões, acompanhando a expansão do conteúdo */
-.buttons-container::before {
-    content: "";
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    bottom: -20px;
+/* Contêiner principal que engloba o título, os botões de período e todo o conteúdo */
+.main-container {
     background-color: beige;
     border-radius: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
-    z-index: -1;
 }
 
 /* Estiliza o título "Mapas mentais" */
@@ -66,34 +51,39 @@ h1 {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
     display: inline-block;
     font-family: 'Roboto', sans-serif;
-    position: relative;
-    z-index: 2;
 }
 
-/* Ao passar o mouse sobre o título, apenas o efeito de scale e sombra, sem mudar a cor */
+/* Ao passar o mouse sobre o título, apenas efeito de scale e sombra */
 h1:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-/* Estilo dos botões toggle dos períodos (primeiro nível) */
+/* Container para organizar os botões dos períodos em linha */
+.period-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin: 30px 0;
+}
+
+/* Estilo dos botões toggle dos períodos (primeiro nível), em bege com texto vinho */
 .toggle-btn {
-    background-color: beige !important; /* Bege */
-    color: #800000 !important; /* Vinho */
+    background-color: beige !important; /* Fundo bege */
+    color: #800000 !important; /* Texto vinho */
     padding: 10px 25px;
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    margin: 15px 0;
     font-size: 18px;
-    display: block;
+    display: inline-block;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    position: relative;
-    z-index: 2;
 }
 
 .toggle-btn:hover {
@@ -106,52 +96,48 @@ h1:hover {
     transform: translateY(1px);
 }
 
-/* Estilo dos botões toggle das disciplinas (segundo nível) */
+/* Estilo dos botões toggle das disciplinas (segundo nível) em vinho com texto branco */
 .inner-toggle-btn {
-    background-color: #800000 !important; /* Vinho */
-    color: #fff !important; /* Branco */
+    background-color: #800000 !important; /* Fundo vinho */
+    color: #fff !important; /* Texto branco */
     padding: 10px 25px;
     border-radius: 15px;
     border: none;
     cursor: pointer;
     margin: 15px 0;
     font-size: 18px;
-    display: block;
+    display: inline-block;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    position: relative;
-    z-index: 2;
 }
 
 .inner-toggle-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
-    background-color: #4d0000; /* Mais escuro no hover */
+    background-color: #4d0000;
 }
 
 .inner-toggle-btn:active {
     transform: translateY(1px);
 }
 
-/* Estilo do conteúdo toggle */
+/* Estilo do conteúdo toggle (disciplinas e mapas), fundo bege, texto vinho */
 .toggle-content {
     display: none;
     background-color: beige !important; /* Fundo bege */
-    color: #800000 !important; /* Letras vinho */
+    color: #800000 !important; /* Texto vinho */
     padding: 20px;
     border-radius: 15px;
-    width: fit-content;
     margin: 25px 0;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     overflow: hidden;
-    position: relative;
-    z-index: 2;
 }
 
+/* Ajuste para lista interna */
 .toggle-content ul {
     margin: 0;
     padding: 0;
@@ -162,20 +148,20 @@ h1:hover {
     margin: 5px 0;
 }
 
-/* Estilo dos links para mapas mentais */
+/* Links para mapas mentais (terceiro nível), fundo vinho e texto branco */
 ul li a {
-    display: block;
-    background-color: #800000 !important; /* Vinho */
-    color: #fff !important; /* Branco */
+    display: inline-block;
+    background-color: #800000 !important; /* Fundo vinho */
+    color: #fff !important; /* Texto branco */
     padding: 10px 25px;
     text-decoration: none;
-    border-radius: 15px; 
+    border-radius: 15px;
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
 }
 
 ul li a:hover {
-    background-color: #4d0000; 
+    background-color: #4d0000;
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
 }
@@ -193,7 +179,7 @@ a, .toggle-btn, .inner-toggle-btn {
     vertical-align: middle;
 }
 
-/* Estilo do menu fixo */
+/* Estilo do menu fixo, caso exista */
 .menu-fixo {
     position: fixed;
     top: 10px;
@@ -219,14 +205,12 @@ a, .toggle-btn, .inner-toggle-btn {
         padding: 8px 15px;
     }
 
-    .menu-fixo {
-        top: auto;
-        bottom: 10px;
-        left: 10px;
-        right: auto;
+    .period-container {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .buttons-container::before {
-        width: 90%;
+    .main-container {
+        width: 95%;
     }
 }
