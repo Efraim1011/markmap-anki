@@ -1,11 +1,16 @@
 console.log("Script carregado com sucesso!");
 
 function toggleVisibility(id) {
-    var element = document.getElementById(id);
-    if (element.style.display === "none" || element.style.display === "") {
-        element.style.display = "block";
-    } else {
-        element.style.display = "none";
+    const element = document.getElementById(id);
+    const button = document.querySelector(`button[onclick="toggleVisibility('${id}')"]`);
+
+    // Alterna a classe 'show' para controlar a visibilidade via CSS
+    element.classList.toggle('show');
+
+    // Atualiza o atributo ARIA para acessibilidade
+    const isExpanded = element.classList.contains('show');
+    if (button) {
+        button.setAttribute('aria-expanded', isExpanded);
     }
 }
 
@@ -31,7 +36,7 @@ async function fetchFiles(folder, elementId) {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
                 link.href = `${folder}/${file.name}`;
-                link.textContent = file.name.replace(/%20/g, ' ');
+                link.textContent = decodeURIComponent(file.name.replace(/%20/g, ' '));
                 link.target = '_blank'; // Abre o link em uma nova aba
                 listItem.appendChild(link);
                 list.appendChild(listItem);
