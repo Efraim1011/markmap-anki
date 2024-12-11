@@ -58,7 +58,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0 auto 40px; /* Centraliza o h1 e aumenta a margem inferior */
     cursor: pointer;
-    white-space: nowrap;
+    white-space: nowrap; /* Mantém o texto em uma única linha */
 }
 
 .main-container h1:hover {
@@ -112,16 +112,19 @@ body {
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    margin: 15px 0; /* Remove a centralização horizontal */
+    margin: 15px 0; /* Mantém a margem superior e inferior */
     font-size: 18px;
-    display: block; /* Altera de inline-block para block para empilhar verticalmente */
-    width: 200px; /* Define uma largura fixa; ajuste conforme necessário */
+    display: block; /* Mantém como block para empilhar verticalmente */
+    /* Remova a largura fixa */
+    /* width: 200px; */ /* Removido */
+    max-width: 100%; /* Adicionado para limitar a largura máxima */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
-    text-align: center;
+    text-align: left; /* Alinha o texto à esquerda */
     font-family: 'Roboto', sans-serif;
-    white-space: nowrap; /* Mantém o texto em uma única linha */
+    white-space: normal; /* Permite que o texto quebre em várias linhas */
+    word-wrap: break-word; /* Quebra palavras longas */
 }
 
 .inner-toggle-btn:hover {
@@ -137,8 +140,8 @@ body {
 /* Media Query para ajustar a largura dos botões das disciplinas em telas maiores */
 @media (min-width: 769px) {
     .inner-toggle-btn {
-        width: 100%; /* Ocupa toda a largura do contêiner */
-        max-width: 300px; /* Limita a largura máxima, ajuste conforme necessário */
+        width: auto; /* Permite que o botão ajuste a largura com base no conteúdo */
+        max-width: 300px; /* Define uma largura máxima para evitar botões muito largos */
     }
 }
 
@@ -147,13 +150,18 @@ body {
     display: none;
     background-color: beige !important;
     color: #800000 !important;
-    padding: 20px;
+    padding: 20px; /* Mantém um padding consistente */
     border-radius: 15px;
     margin: 25px 0;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     overflow: hidden;
     text-align: left; /* Alinha o conteúdo à esquerda */
+    
+    /* Adicionado para que o tamanho do fundo se ajuste ao conteúdo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 /* Lista interna dos mapas mentais */
@@ -212,5 +220,6 @@ a, .toggle-btn, .inner-toggle-btn, h1 {
     .inner-toggle-btn {
         width: 100%; /* Ocupa toda a largura disponível */
         max-width: none; /* Remove a largura máxima */
+        text-align: left; /* Alinha o texto à esquerda */
     }
 }
