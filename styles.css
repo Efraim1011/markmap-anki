@@ -29,7 +29,7 @@ body {
     position: relative; /* Permite pseudo-elemento absoluto */
 }
 
-/* Fundo retangular bege por fora de todos os botões, mais estreito */
+/* Fundo retangular bege por fora de todos os botões */
 body::before {
     content: "";
     position: absolute;
@@ -41,15 +41,13 @@ body::before {
     background-color: beige;
     border-radius: 20px;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
-    z-index: -1; /* Coloca o retângulo atrás do conteúdo para que os botões apareçam */
+    z-index: -1; /* Coloca o retângulo atrás do conteúdo */
 }
 
 /* Container que envolve todos os botões */
 .buttons-container {
     position: relative;
     z-index: 2;
-    /* Remover o fundo para não conflitar com o retângulo atrás, se desejar deixá-los sobre o bege */
-    /* background-color: beige; */
     border-radius: 20px;
     padding: 20px;
     width: fit-content;
@@ -57,8 +55,8 @@ body::before {
 
 /* Estiliza o título "Mapas mentais" */
 h1 {
-    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
-    color: #fff;
+    background-color: #800000; /* Vinho */
+    color: #fff; /* Branco */
     padding: 15px 30px;
     border-radius: 20px;
     margin: 30px 0;
@@ -80,10 +78,10 @@ h1:hover {
     background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
 }
 
-/* Estilo dos botões toggle */
+/* Estilo dos botões toggle (períodos, disciplinas, mapas) */
 .toggle-btn, .inner-toggle-btn {
-    background-color: #800000; /* Cor vinho */
-    color: #fff; /* Letras brancas */
+    background-color: beige !important; /* Bege */
+    color: #800000 !important; /* Vinho */
     padding: 10px 25px;
     border-radius: 15px;
     border: none;
@@ -103,7 +101,7 @@ h1:hover {
 .toggle-btn:hover, .inner-toggle-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
-    background-color: #4d0000; /* Tonalidade um pouco mais escura de vinho no hover */
+    background-color: #f5f5dc; /* Um bege um pouco mais escuro no hover, opcional */
 }
 
 .toggle-btn:active, .inner-toggle-btn:active {
@@ -113,8 +111,8 @@ h1:hover {
 /* Estilo do conteúdo toggle */
 .toggle-content {
     display: none;
-    background-color: #800000 !important; /* Fundo vinho */
-    color: #fff !important; /* Letras brancas */
+    background-color: beige !important; /* Fundo bege */
+    color: #800000 !important; /* Letras vinho */
     padding: 20px;
     border-radius: 15px;
     width: fit-content;
@@ -139,17 +137,17 @@ h1:hover {
 /* Estilo dos links para mapas mentais */
 ul li a {
     display: block;
-    background-color: #800000 !important; /* Mesma cor vinho dos botões */
-    color: #fff !important; /* Letras brancas */
+    background-color: beige !important; /* Bege */
+    color: #800000 !important; /* Vinho */
     padding: 10px 25px;
     text-decoration: none;
-    border-radius: 15px; /* Mesma borda arredondada */
+    border-radius: 15px; 
     border: none;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
 }
 
 ul li a:hover {
-    background-color: #4d0000; /* Mesma lógica de hover */
+    background-color: #f5f5dc; 
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
 }
