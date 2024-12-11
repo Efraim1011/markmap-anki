@@ -13,17 +13,27 @@
 
 /* Estilização básica */
 body {
-    background-color: var(--bg-color-dark); /* Fundo escuro */
-    color: var(--text-color-dark); /* Cor do texto claro */
+    background-image: url('minha_imagem_gerada_IA.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--text-color-dark);
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Open Sans', sans-serif; /* Fonte padrão para o corpo do texto */
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.5px;
     transition: background-color 0.3s ease, color 0.3s ease;
     padding: 20px;
+}
+
+/* Container que envolve todos os botões */
+.buttons-container {
+    background-color: beige;
+    border-radius: 20px;
+    padding: 20px;
+    width: fit-content;
 }
 
 /* Estiliza o título "Mapas mentais" */
@@ -39,7 +49,7 @@ h1 {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     display: inline-block;
-    font-family: 'Roboto', sans-serif; /* Fonte para o título */
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Efeito de hover para o título */
@@ -51,8 +61,8 @@ h1:hover {
 
 /* Estilo dos botões toggle */
 .toggle-btn, .inner-toggle-btn {
-    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
-    color: #fff;
+    background-color: #800000; /* Cor vinho */
+    color: #fff; /* Letras brancas */
     padding: 10px 25px;
     border-radius: 15px;
     border: none;
@@ -64,13 +74,13 @@ h1:hover {
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
     text-align: center;
-    font-family: 'Roboto', sans-serif; /* Fonte para os botões */
+    font-family: 'Roboto', sans-serif;
 }
 
 .toggle-btn:hover, .inner-toggle-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
-    background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
+    background-color: #4d0000; /* Tonalidade um pouco mais escura de vinho no hover */
 }
 
 .toggle-btn:active, .inner-toggle-btn:active {
@@ -79,20 +89,19 @@ h1:hover {
 
 /* Estilo do conteúdo toggle */
 .toggle-content {
-    display: none; /* Esconde o conteúdo por padrão */
+    display: none;
     background-color: var(--primary-color);
     padding: 20px;
     border-radius: 15px;
     width: fit-content;
-    margin: 25px 0; /* Aumenta o espaçamento entre os elementos */
+    margin: 25px 0;
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* Animação de entrada */
-    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do container */
-    position: relative; /* Define o posicionamento relativo para ajuste de z-index */
-    z-index: 1; /* Eleva o conteúdo acima dos botões toggle */
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-/* Ajuste para garantir que o conteúdo não ultrapasse os limites do elemento pai */
 .toggle-content ul {
     margin: 0;
     padding: 0;
@@ -103,32 +112,22 @@ h1:hover {
     margin: 5px 0;
 }
 
-/* Estiliza os itens da lista */
-ul li {
-    margin: 10px 0;
-    white-space: nowrap;
-    visibility: visible;
-    display: block;
-}
-
 /* Estilo dos links para mapas mentais */
 ul li a {
     display: block;
-    background-color: var(--bg-color-dark);
-    color: var(--highlight-color);
+    background-color: #800000; /* Mesma cor vinho dos botões */
+    color: #fff; /* Letras brancas */
     padding: 10px 25px;
     text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid var(--highlight-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    visibility: visible;
+    border-radius: 15px; /* Mesma borda arredondada */
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
 }
 
 ul li a:hover {
-    background-color: #333;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #4d0000; /* Mesma lógica de hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px var(--shadow-color);
 }
 
 /* Customização do cursor */
