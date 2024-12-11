@@ -7,151 +7,158 @@
     <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link para o CSS -->
 </head>
 <body>
-    <h1>Mapas mentais</h1>
-    
-    <!-- Botão toggle 1º Período -->
-    <button class="toggle-btn" onclick="toggleVisibility('periodo1')">1º Período</button>
-    <div id="periodo1" class="toggle-content">
-        <!-- Botão toggle Anatomia I -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('anatomiaI')">Anatomia I</button>
-        <div id="anatomiaI" class="toggle-content">
-            <ul id="anatomiaIList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
+    <div class="main-container"> <!-- Início do main-container -->
+        <h1>Mapas mentais</h1>
+        
+        <!-- Botões dos períodos -->
+        <div class="period-buttons">
+            <!-- Botão toggle 1º Período -->
+            <button class="toggle-btn" onclick="toggleVisibility('periodo1')">1º Período</button>
+            <!-- Botão toggle 2º Período -->
+            <button class="toggle-btn" onclick="toggleVisibility('periodo2')">2º Período</button>
+            <!-- Botão toggle 3º Período -->
+            <button class="toggle-btn" onclick="toggleVisibility('periodo3')">3º Período</button>
+            <!-- Botão toggle 4º Período -->
+            <button class="toggle-btn" onclick="toggleVisibility('periodo4')">4º Período</button>
+        </div>
+        
+        <!-- Conteúdo dos períodos -->
+        <div id="periodo1" class="toggle-content">
+            <!-- Botão toggle Anatomia I -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('anatomiaI')">Anatomia I</button>
+            <div id="anatomiaI" class="toggle-content">
+                <ul id="anatomiaIList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
+
+            <!-- Botão toggle Fisiologia I -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('fisiologiaI')">Fisiologia I</button>
+            <div id="fisiologiaI" class="toggle-content">
+                <ul id="fisiologiaIList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
         </div>
 
-        <!-- Botão toggle Fisiologia I -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('fisiologiaI')">Fisiologia I</button>
-        <div id="fisiologiaI" class="toggle-content">
-            <ul id="fisiologiaIList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
-    </div>
+        <div id="periodo2" class="toggle-content">
+            <!-- Botão toggle Anatomia II -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('anatomiaII')">Anatomia II</button>
+            <div id="anatomiaII" class="toggle-content">
+                <ul id="anatomiaIIList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-    <!-- Botão toggle 2º Período -->
-    <button class="toggle-btn" onclick="toggleVisibility('periodo2')">2º Período</button>
-    <div id="periodo2" class="toggle-content">
-        <!-- Botão toggle Anatomia II -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('anatomiaII')">Anatomia II</button>
-        <div id="anatomiaII" class="toggle-content">
-            <ul id="anatomiaIIList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
+            <!-- Botão toggle Fisiologia II -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('fisiologiaII')">Fisiologia II</button>
+            <div id="fisiologiaII" class="toggle-content">
+                <ul id="fisiologiaIIList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
         </div>
 
-        <!-- Botão toggle Fisiologia II -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('fisiologiaII')">Fisiologia II</button>
-        <div id="fisiologiaII" class="toggle-content">
-            <ul id="fisiologiaIIList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
-    </div>
+        <div id="periodo3" class="toggle-content">
+            <!-- Botão toggle Semiologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('semiologia')">Semiologia</button>
+            <div id="semiologia" class="toggle-content">
+                <ul id="semiologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-    <!-- Botão toggle 3º Período -->
-    <button class="toggle-btn" onclick="toggleVisibility('periodo3')">3º Período</button>
-    <div id="periodo3" class="toggle-content">
-        <!-- Botão toggle Semiologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('semiologia')">Semiologia</button>
-        <div id="semiologia" class="toggle-content">
-            <ul id="semiologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
+            <!-- Botão toggle Patologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('patologia')">Patologia</button>
+            <div id="patologia" class="toggle-content">
+                <ul id="patologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-        <!-- Botão toggle Patologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('patologia')">Patologia</button>
-        <div id="patologia" class="toggle-content">
-            <ul id="patologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
+            <!-- Botão toggle Parasitologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('parasitologia')">Parasitologia</button>
+            <div id="parasitologia" class="toggle-content">
+                <ul id="parasitologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-        <!-- Botão toggle Parasitologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('parasitologia')">Parasitologia</button>
-        <div id="parasitologia" class="toggle-content">
-            <ul id="parasitologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
+            <!-- Botão toggle Imunologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('imunologia')">Imunologia</button>
+            <div id="imunologia" class="toggle-content">
+                <ul id="imunologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-        <!-- Botão toggle Imunologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('imunologia')">Imunologia</button>
-        <div id="imunologia" class="toggle-content">
-            <ul id="imunologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
+            <!-- Botão toggle Microbiologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('microbiologia')">Microbiologia</button>
+            <div id="microbiologia" class="toggle-content">
+                <ul id="microbiologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
         </div>
 
-        <!-- Botão toggle Microbiologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('microbiologia')">Microbiologia</button>
-        <div id="microbiologia" class="toggle-content">
-            <ul id="microbiologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
-    </div>
+        <div id="periodo4" class="toggle-content">
+            <!-- Botão toggle Farmacologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('farmacologia')">Farmacologia</button>
+            <div id="farmacologia" class="toggle-content">
+                <ul id="farmacologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-    <!-- Botão toggle 4º Período -->
-    <button class="toggle-btn" onclick="toggleVisibility('periodo4')">4º Período</button>
-    <div id="periodo4" class="toggle-content">
-        <!-- Botão toggle Farmacologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('farmacologia')">Farmacologia</button>
-        <div id="farmacologia" class="toggle-content">
-            <ul id="farmacologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
+            <!-- Botão toggle Epidemiologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('epidemiologia')">Epidemiologia</button>
+            <div id="epidemiologia" class="toggle-content">
+                <ul id="epidemiologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-        <!-- Botão toggle Epidemiologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('epidemiologia')">Epidemiologia</button>
-        <div id="epidemiologia" class="toggle-content">
-            <ul id="epidemiologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
+            <!-- Botão toggle Otorrinolaringologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('otorrinolaringologia')">Otorrinolaringologia</button>
+            <div id="otorrinolaringologia" class="toggle-content">
+                <ul id="otorrinolaringologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-        <!-- Botão toggle Otorrinolaringologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('otorrinolaringologia')">Otorrinolaringologia</button>
-        <div id="otorrinolaringologia" class="toggle-content">
-            <ul id="otorrinolaringologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
+            <!-- Botão toggle Oftalmologia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('oftalmologia')">Oftalmologia</button>
+            <div id="oftalmologia" class="toggle-content">
+                <ul id="oftalmologiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-        <!-- Botão toggle Oftalmologia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('oftalmologia')">Oftalmologia</button>
-        <div id="oftalmologia" class="toggle-content">
-            <ul id="oftalmologiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
+            <!-- Botão toggle PAPM IV -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('papmiv')">PAPM IV</button>
+            <div id="papmiv" class="toggle-content">
+                <ul id="papmivList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-        <!-- Botão toggle PAPM IV -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('papmiv')">PAPM IV</button>
-        <div id="papmiv" class="toggle-content">
-            <ul id="papmivList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
+            <!-- Botão toggle Saúde da Família IV -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('saudefamiliaiv')">Saúde da Família IV</button>
+            <div id="saudefamiliaiv" class="toggle-content">
+                <ul id="saudefamiliaivList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
 
-        <!-- Botão toggle Saúde da Família IV -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('saudefamiliaiv')">Saúde da Família IV</button>
-        <div id="saudefamiliaiv" class="toggle-content">
-            <ul id="saudefamiliaivList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
+            <!-- Botão toggle Fundamentos da Cirurgia -->
+            <button class="inner-toggle-btn" onclick="toggleVisibility('fundamentosCirurgia')">Fundamentos da Cirurgia</button>
+            <div id="fundamentosCirurgia" class="toggle-content">
+                <ul id="fundamentosCirurgiaList">
+                    <!-- Links serão carregados aqui pelo script -->
+                </ul>
+            </div>
         </div>
-
-        <!-- Botão toggle Fundamentos da Cirurgia -->
-        <button class="inner-toggle-btn" onclick="toggleVisibility('fundamentosCirurgia')">Fundamentos da Cirurgia</button>
-        <div id="fundamentosCirurgia" class="toggle-content">
-            <ul id="fundamentosCirurgiaList">
-                <!-- Links serão carregados aqui pelo script -->
-            </ul>
-        </div>
-    </div>
+    </div> <!-- Fim do main-container -->
 
     <script src="scripts.js"></script> <!-- Link para o JavaScript -->
 </body>
