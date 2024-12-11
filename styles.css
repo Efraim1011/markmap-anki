@@ -13,7 +13,7 @@
 
 /* Estilização básica */
 body {
-    background-image: url('images/DALL·E 2024-12-11 11.54.48 - Uma mesa de estudos organizada e estilosa, típica de blogueiras. A mesa é branca com detalhes em dourado, decorada com marca-textos coloridos, canetas.jpg'); /* Caminho para a imagem de fundo */
+    background-image: url('Images/DALL·E 2024-12-11 11.54.48 - Uma mesa de estudos organizada e estilosa, típica de blogueiras. A mesa é branca com detalhes em dourado, decorada com marca-textos coloridos, canetas.jpg'); /* Caminho para a imagem de fundo */
     background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
     background-position: center center; /* Centraliza a imagem */
