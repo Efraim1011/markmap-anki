@@ -13,7 +13,7 @@
 
 /* Estilização básica */
 body {
-    background-image: url('minha_imagem_criada_IA.jpg'); /* Imagem de fundo criada por IA */
+    background-image: url('https://files.oaiusercontent.com/file-UXA62CDE1fwnpBPneJ3iFq?se=2024-12-11T14%3A59%3A19Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dac3027fc-1301-47e6-b65f-c379fb619ccd.webp&sig=KMqkKAoUFh7Qyieez16s4iWw1p7pzLs%2BTBcbgsxUKtI%3D'); /* Imagem de fundo criada por IA */
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--text-color-dark);
