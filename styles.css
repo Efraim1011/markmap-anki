@@ -106,27 +106,28 @@ body {
 
 /* Botões das disciplinas em vinho (texto branco), descendo verticalmente */
 .inner-toggle-btn {
-    background-color: #800000 !important;
-    color: #fff !important;
+    background-color: #800000 !important; /* Vinho */
+    color: #fff !important; /* Texto branco */
     padding: 10px 25px;
     border-radius: 15px;
     border: none;
     cursor: pointer;
-    margin: 15px 0;
+    margin: 15px auto; /* Espaçamento superior e inferior, centraliza horizontalmente */
     font-size: 18px;
-    display: inline-block;
+    display: block; /* Altera de inline-block para block para empilhar verticalmente */
+    width: 200px; /* Define uma largura fixa; ajuste conforme necessário */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    white-space: nowrap;
+    white-space: nowrap; /* Mantém o texto em uma única linha */
 }
 
 .inner-toggle-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
-    background-color: #4d0000;
+    background-color: #4d0000; /* Cor de fundo ao passar o mouse */
 }
 
 .inner-toggle-btn:active {
@@ -197,5 +198,10 @@ a, .toggle-btn, .inner-toggle-btn, h1 {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px; /* Mantido como 10px após redução */
+    }
+
+    /* Ajustar a largura dos botões das disciplinas em telas menores */
+    .inner-toggle-btn {
+        width: 100%; /* Ocupa toda a largura disponível */
     }
 }
