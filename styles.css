@@ -13,7 +13,7 @@
 
 /* Estilização básica */
 body {
-    background-image: url('minha_imagem_gerada_IA.jpg');
+    background-image: url('minha_imagem_criada_IA.jpg'); /* Imagem de fundo criada por IA */
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--text-color-dark);
@@ -90,7 +90,7 @@ h1:hover {
 /* Estilo do conteúdo toggle */
 .toggle-content {
     display: none;
-    background-color: var(--primary-color);
+    background-color: beige; /* Fundo bege ao invés de laranja */
     padding: 20px;
     border-radius: 15px;
     width: fit-content;
