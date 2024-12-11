@@ -26,6 +26,22 @@ body {
     letter-spacing: 0.5px;
     transition: background-color 0.3s ease, color 0.3s ease;
     padding: 20px;
+    position: relative; /* Permite pseudo-elemento absoluto */
+}
+
+/* Fundo retangular bege por fora de todos os botões */
+body::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    min-height: 90vh;
+    background-color: beige;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px var(--shadow-color);
+    z-index: 1; /* Coloca o retângulo atrás do conteúdo */
 }
 
 /* Container que envolve todos os botões */
@@ -34,6 +50,8 @@ body {
     border-radius: 20px;
     padding: 20px;
     width: fit-content;
+    position: relative;
+    z-index: 2;
 }
 
 /* Estiliza o título "Mapas mentais" */
@@ -50,6 +68,8 @@ h1 {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     display: inline-block;
     font-family: 'Roboto', sans-serif;
+    position: relative;
+    z-index: 2;
 }
 
 /* Efeito de hover para o título */
@@ -90,7 +110,8 @@ h1:hover {
 /* Estilo do conteúdo toggle */
 .toggle-content {
     display: none;
-    background-color: beige; /* Fundo bege ao invés de laranja */
+    background-color: #800000 !important; /* Fundo vinho */
+    color: #fff !important; /* Letras brancas */
     padding: 20px;
     border-radius: 15px;
     width: fit-content;
@@ -99,7 +120,7 @@ h1:hover {
     transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
     overflow: hidden;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .toggle-content ul {
@@ -115,8 +136,8 @@ h1:hover {
 /* Estilo dos links para mapas mentais */
 ul li a {
     display: block;
-    background-color: #800000; /* Mesma cor vinho dos botões */
-    color: #fff; /* Letras brancas */
+    background-color: #800000 !important; /* Mesma cor vinho dos botões */
+    color: #fff !important; /* Letras brancas */
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 15px; /* Mesma borda arredondada */
@@ -174,5 +195,9 @@ a, .toggle-btn, .inner-toggle-btn {
         bottom: 10px;
         left: 10px;
         right: auto;
+    }
+
+    body::before {
+        width: 90%;
     }
 }
