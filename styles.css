@@ -47,11 +47,11 @@ body {
     font-size: 24px;
     font-weight: 700;
     display: inline-block; /* Permite centralizar */
-    text-align: center;
+    /* Removido: text-align: center; */
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
     font-family: 'Roboto', sans-serif;
-    margin-bottom: 20px;
+    margin: 0 auto 20px; /* Adicionado margin para centralização */
     cursor: pointer;
     white-space: nowrap;
 }
@@ -65,7 +65,7 @@ body {
 .period-buttons {
     display: inline-flex;
     align-items: center;
-    gap: 20px; /* Espaço entre os botões */
+    gap: 10px; /* Reduzido de 20px para 10px */
     margin-top: 20px;
 }
 
@@ -189,6 +189,6 @@ a, .toggle-btn, .inner-toggle-btn, h1 {
     .period-buttons {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 10px; /* Mantido como 10px após redução */
     }
 }
