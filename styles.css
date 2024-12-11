@@ -37,18 +37,16 @@ body {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
 }
 
-/* Barra superior com o botão Mapas Mentais e os botões dos períodos em linha */
+/* Barra superior com o botão "Mapas Mentais" e os botões dos períodos em linha */
 .top-bar {
     display: flex;
     align-items: center;
+    /* Espaço entre os itens da barra superior */
     gap: 20px;
-    /* Ajuste a justificação conforme desejado 
-       Se quiser que se estendam até o outro lado da tela, use space-between.
-       Caso queira apenas em linha um ao lado do outro, use flex-start. */
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
-/* Botão "Mapas mentais" (no lugar indicado pelo círculo vermelho) */
+/* Botão "Mapas mentais" */
 .top-bar h1 {
     background-color: #800000; /* Vinho */
     color: #fff; /* Branco */
@@ -61,7 +59,7 @@ body {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
     font-family: 'Roboto', sans-serif;
     white-space: nowrap;
-    cursor: pointer; /* Agora se comporta como botão */
+    cursor: pointer;
 }
 
 .top-bar h1:hover {
@@ -69,7 +67,7 @@ body {
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-/* Botões dos períodos em bege (texto vinho), dispostos em linha após o Mapas Mentais */
+/* Botões dos períodos em bege (texto vinho) */
 .toggle-btn {
     background-color: beige !important; /* Fundo bege */
     color: #800000 !important; /* Texto vinho */
@@ -87,6 +85,13 @@ body {
     white-space: nowrap;
 }
 
+/* Adicionando um espaço entre os botões dos períodos
+   Se necessário, já temos o gap do .top-bar, mas caso precise mais separação: 
+   Podemos usar margin diretamente nos botões também. Ex:
+   .toggle-btn:not(:last-child) { margin-right: 10px; } 
+   Mas já existe gap:20px na top-bar.
+*/
+
 .toggle-btn:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
@@ -97,7 +102,7 @@ body {
     transform: translateY(1px);
 }
 
-/* Botões das disciplinas em vinho (texto branco), ao clicar eles aparecem DESCENDO, não horizontal */
+/* Botões das disciplinas em vinho (texto branco), descendo verticalmente */
 .inner-toggle-btn {
     background-color: #800000 !important; /* Fundo vinho */
     color: #fff !important; /* Texto branco */
@@ -126,9 +131,7 @@ body {
     transform: translateY(1px);
 }
 
-/* O conteúdo que aparece ao clicar (disciplinas, mapas) DESCE verticalmente. 
-   Fundo bege, texto vinho, 
-   Ao abrir, o contêiner principal .main-container se expande verticalmente acompanhando o conteúdo. */
+/* O conteúdo que aparece ao clicar (disciplinas, mapas) desce verticalmente */
 .toggle-content {
     display: none;
     background-color: beige !important; /* Fundo bege */
@@ -141,7 +144,7 @@ body {
     overflow: hidden;
 }
 
-/* Listas internas dos mapas mentais */
+/* Lista interna dos mapas mentais */
 .toggle-content ul {
     margin: 0;
     padding: 0;
@@ -172,35 +175,8 @@ ul li a:hover {
 }
 
 /* Customização do cursor */
-a, .toggle-btn, .inner-toggle-btn, h1 {
+a, .toggle-btn, .inner-toggle-btn, .top-bar h1 {
     cursor: pointer;
-}
-
-/* Estilo para ícones (se necessário) */
-.icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-/* Estilo do menu fixo (se existir) */
-.menu-fixo {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: var(--primary-color);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.menu-fixo a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 0;
-    font-weight: 600;
 }
 
 /* Ajustes responsivos */
@@ -212,7 +188,7 @@ a, .toggle-btn, .inner-toggle-btn, h1 {
 
     .top-bar {
         flex-wrap: wrap;
-        justify-content: flex-start;
+        gap: 10px;
     }
 
     .main-container {
