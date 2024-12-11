@@ -37,19 +37,10 @@ body {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
 }
 
-/* Barra superior com o botão "Mapas Mentais" e os botões dos períodos em linha */
-.top-bar {
-    display: flex;
-    align-items: center;
-    /* Espaço entre os itens da barra superior */
-    gap: 20px;
-    justify-content: flex-start;
-}
-
-/* Botão "Mapas mentais" */
-.top-bar h1 {
-    background-color: #800000; /* Vinho */
-    color: #fff; /* Branco */
+/* O título "Mapas mentais" como um botão com fundo vinho e letras brancas */
+h1 {
+    background-color: #800000 !important; /* fundo vinho */
+    color: #fff !important; /* texto branco */
     padding: 15px 30px;
     border-radius: 20px;
     font-size: 24px;
@@ -58,16 +49,23 @@ body {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
     font-family: 'Roboto', sans-serif;
-    white-space: nowrap;
+    display: inline-block;
     cursor: pointer;
+    margin-bottom: 20px;
+    white-space: nowrap;
 }
 
-.top-bar h1:hover {
+h1:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-/* Botões dos períodos em bege (texto vinho) */
+/* Botões dos períodos em linha, com espaço entre eles */
+.period-buttons {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .toggle-btn {
     background-color: beige !important; /* Fundo bege */
     color: #800000 !important; /* Texto vinho */
@@ -83,14 +81,12 @@ body {
     text-align: center;
     font-family: 'Roboto', sans-serif;
     white-space: nowrap;
+    margin-right: 20px; /* Espaço entre os botões */
 }
 
-/* Adicionando um espaço entre os botões dos períodos
-   Se necessário, já temos o gap do .top-bar, mas caso precise mais separação: 
-   Podemos usar margin diretamente nos botões também. Ex:
-   .toggle-btn:not(:last-child) { margin-right: 10px; } 
-   Mas já existe gap:20px na top-bar.
-*/
+.toggle-btn:last-child {
+    margin-right: 0;
+}
 
 .toggle-btn:hover {
     transform: scale(1.05);
@@ -175,7 +171,7 @@ ul li a:hover {
 }
 
 /* Customização do cursor */
-a, .toggle-btn, .inner-toggle-btn, .top-bar h1 {
+a, .toggle-btn, .inner-toggle-btn, h1 {
     cursor: pointer;
 }
 
@@ -186,9 +182,8 @@ a, .toggle-btn, .inner-toggle-btn, .top-bar h1 {
         padding: 8px 15px;
     }
 
-    .top-bar {
-        flex-wrap: wrap;
-        gap: 10px;
+    .toggle-btn {
+        margin-right: 10px;
     }
 
     .main-container {
