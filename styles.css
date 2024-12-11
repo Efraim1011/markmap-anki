@@ -137,20 +137,9 @@ body {
     transform: translateY(1px);
 }
 
-/* Media Query para ajustar a largura dos botões das disciplinas em telas maiores */
-@media (min-width: 769px) {
-    .inner-toggle-btn {
-        width: auto; /* Permite que o botão ajuste a largura com base no conteúdo */
-        max-width: 300px; /* Define uma largura máxima para evitar botões muito largos */
-    }
-}
-
 /* Quando a classe 'show' é adicionada, o conteúdo fica visível */
 .toggle-content.show {
-    display: flex; /* Ou 'block' se preferir */
-    flex-direction: column;
-    align-items: flex-start;
-    /* Para animação suave */
+    display: block; /* Exibe o conteúdo */
     opacity: 1;
     max-height: 1000px; /* Valor suficientemente grande para acomodar o conteúdo */
 }
@@ -220,5 +209,13 @@ a, .toggle-btn, .inner-toggle-btn, h1 {
         width: 100%; /* Ocupa toda a largura disponível */
         max-width: none; /* Remove a largura máxima */
         text-align: left; /* Alinha o texto à esquerda */
+    }
+}
+
+/* Media Query para ajustar a largura dos botões das disciplinas em telas maiores */
+@media (min-width: 769px) {
+    .inner-toggle-btn {
+        width: auto; /* Permite que o botão ajuste a largura com base no conteúdo */
+        max-width: 300px; /* Define uma largura máxima para evitar botões muito largos */
     }
 }
