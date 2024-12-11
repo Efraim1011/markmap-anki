@@ -13,7 +13,7 @@
 
 /* Estilização básica */
 body {
-    background-image: url('minha_imagem_criada_IA.jpg'); /* Imagem de fundo criada por IA */
+    background-image: url('minha_imagem_criada_IA.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--text-color-dark);
@@ -26,7 +26,7 @@ body {
     padding: 20px;
 }
 
-/* Contêiner principal estreito e com fundo bege para envolver tudo */
+/* Contêiner principal com fundo bege */
 .main-container {
     background-color: beige;
     border-radius: 20px;
@@ -37,18 +37,17 @@ body {
     box-shadow: 0px 0px 10px 2px var(--shadow-color);
 }
 
-/* Barra superior (Mapas Mentais + períodos), todos em linha */
+/* Barra superior: "Mapas Mentais" à esquerda e os períodos distribuídos até o outro lado */
 .top-bar {
     display: flex;
     align-items: center;
-    gap: 20px;
-    justify-content: flex-start;
+    width: 100%;
 }
 
-/* Botão "Mapas mentais" */
-h1 {
-    background-color: #800000 !important; /* fundo vinho */
-    color: #fff !important; /* texto branco */
+/* Botão "Mapas mentais" no extremo esquerdo */
+.top-bar h1 {
+    background-color: #800000 !important; /* Fundo vinho */
+    color: #fff !important; /* Texto branco */
     padding: 15px 30px;
     border-radius: 20px;
     font-size: 24px;
@@ -59,18 +58,27 @@ h1 {
     font-family: 'Roboto', sans-serif;
     white-space: nowrap;
     cursor: pointer;
-    margin: 0; /* Remover margens padrão */
+    margin: 0;
+    margin-right: 20px; /* Pequeno espaço à direita do "Mapas Mentais" */
 }
 
-h1:hover {
+.top-bar h1:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px var(--shadow-color);
 }
 
-/* Botões dos períodos em bege (texto vinho) em linha, à direita de "Mapas Mentais" */
+/* Contêiner para os botões dos períodos ocupar todo o espaço restante */
+.period-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribui os botões dos períodos de um lado ao outro */
+    flex: 1;
+}
+
+/* Botões dos períodos distribuídos horizontalmente */
 .toggle-btn {
-    background-color: beige !important; /* Fundo bege */
-    color: #800000 !important; /* Texto vinho */
+    background-color: beige !important;
+    color: #800000 !important;
     padding: 10px 25px;
     border-radius: 15px;
     border: none;
@@ -96,8 +104,8 @@ h1:hover {
 
 /* Botões das disciplinas em vinho (texto branco), descendo verticalmente */
 .inner-toggle-btn {
-    background-color: #800000 !important; /* Fundo vinho */
-    color: #fff !important; /* Texto branco */
+    background-color: #800000 !important;
+    color: #fff !important;
     padding: 10px 25px;
     border-radius: 15px;
     border: none;
@@ -123,11 +131,11 @@ h1:hover {
     transform: translateY(1px);
 }
 
-/* O conteúdo que aparece ao clicar (disciplinas, mapas) desce verticalmente */
+/* Conteúdo que aparece ao clicar (disciplinas, mapas) desce verticalmente */
 .toggle-content {
     display: none;
-    background-color: beige !important; /* Fundo bege */
-    color: #800000 !important; /* Texto vinho */
+    background-color: beige !important;
+    color: #800000 !important;
     padding: 20px;
     border-radius: 15px;
     margin: 25px 0;
@@ -150,8 +158,8 @@ h1:hover {
 /* Links para os mapas mentais (vinho com texto branco) */
 ul li a {
     display: inline-block;
-    background-color: #800000 !important; /* Fundo vinho */
-    color: #fff !important; /* Texto branco */
+    background-color: #800000 !important;
+    color: #fff !important;
     padding: 10px 25px;
     text-decoration: none;
     border-radius: 15px;
@@ -186,8 +194,12 @@ a, .toggle-btn, .inner-toggle-btn, h1 {
         flex-wrap: wrap;
     }
 
+    .period-container {
+        margin-top: 10px;
+        justify-content: space-evenly;
+    }
+
     .toggle-btn {
-        margin-right: 10px;
-        margin-bottom: 10px;
+        margin: 0 10px 10px 0;
     }
 }
