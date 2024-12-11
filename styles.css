@@ -13,9 +13,11 @@
 
 /* Estilização básica */
 body {
-    background-image: url('minha_imagem_criada_IA.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url('images/DALL·E 2024-12-11 11.54.48 - Uma mesa de estudos organizada e estilosa, típica de blogueiras. A mesa é branca com detalhes em dourado, decorada com marca-textos coloridos, canetas.jpg'); /* Caminho para a imagem de fundo */
+    background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Faz com que a imagem de fundo fique fixa ao rolar a página */
     color: var(--text-color-dark);
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
@@ -31,9 +33,23 @@ body {
     box-sizing: border-box;
 }
 
-/* Contêiner principal com fundo bege */
+/* Pseudo-elemento para sobreposição (Opcional) */
+/*
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Branco semi-transparente */
+    z-index: -1; /* Coloca a sobreposição atrás do conteúdo */
+}
+*/
+
+/* Contêiner principal com fundo semi-transparente */
 .main-container {
-    background-color: beige;
+    background-color: rgba(245, 245, 220, 0.9); /* Beige com 90% de opacidade */
     border-radius: 20px;
     padding: 40px 20px; /* Aumentei o padding superior para posicionamento */
     width: 90%;
@@ -145,7 +161,7 @@ body {
 /* O conteúdo que aparece ao clicar (disciplinas, mapas) desce verticalmente */
 .toggle-content {
     display: none;
-    background-color: beige !important;
+    background-color: rgba(245, 245, 220, 0.9) !important; /* Beige semi-transparente */
     color: #800000 !important;
     padding: 20px;
     border-radius: 15px;
