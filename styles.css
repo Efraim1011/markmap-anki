@@ -117,14 +117,14 @@ body {
     display: block; /* Mantém como block para empilhar verticalmente */
     /* Remova a largura fixa */
     /* width: 200px; */ /* Removido */
-    max-width: 100%; /* Adicionado para limitar a largura máxima */
+    max-width: 100%; /* Limita a largura máxima para não exceder o contêiner */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease, background-color 0.3s ease;
     box-shadow: 0 4px 8px var(--shadow-color);
     font-weight: 600;
     text-align: left; /* Alinha o texto à esquerda */
     font-family: 'Roboto', sans-serif;
     white-space: normal; /* Permite que o texto quebre em várias linhas */
-    word-wrap: break-word; /* Quebra palavras longas */
+    word-wrap: break-word; /* Quebra palavras longas para evitar overflow */
 }
 
 .inner-toggle-btn:hover {
@@ -145,23 +145,22 @@ body {
     }
 }
 
-/* O conteúdo que aparece ao clicar (disciplinas, mapas) desce verticalmente */
-.toggle-content {
-    display: none;
-    background-color: beige !important;
-    color: #800000 !important;
-    padding: 20px; /* Mantém um padding consistente */
-    border-radius: 15px;
-    margin: 25px 0;
-    box-shadow: 0px 0px 10px 2px var(--shadow-color);
-    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-    overflow: hidden;
-    text-align: left; /* Alinha o conteúdo à esquerda */
-    
-    /* Adicionado para que o tamanho do fundo se ajuste ao conteúdo */
-    display: flex;
+/* Quando a classe 'show' é adicionada, o conteúdo fica visível */
+.toggle-content.show {
+    display: flex; /* Ou 'block' se preferir */
     flex-direction: column;
     align-items: flex-start;
+    /* Para animação suave */
+    opacity: 1;
+    max-height: 1000px; /* Valor suficientemente grande para acomodar o conteúdo */
+}
+
+/* Estado inicial */
+.toggle-content {
+    display: none; /* Esconde o conteúdo por padrão */
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
 }
 
 /* Lista interna dos mapas mentais */
