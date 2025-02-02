@@ -60,4 +60,12 @@ window.onload = function() {
     fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
     fetchFiles('4º%20Período/Saúde%20da%20Família%20IV', 'saudefamiliaivList');
     fetchFiles('4º%20Período/Fundamentos%20da%20cirurgia', 'fundamentosCirurgiaList');
+    
+    // Novas chamadas para o 5º Período
+    fetchFiles('5º%20Período/Diagnóstico%20por%20imagem', 'diagnosticoImagemList');
+    fetchFiles('5º%20Período/Farmacologia', 'farmacologia5List');
+    fetchFiles('5º%20Período/Fundamentos%20do%20diagnóstico%20médico', 'fundamentosDiagnosticoList');
+    fetchFiles('5º%20Período/Neurologia', 'neurologiaList');
+    fetchFiles('5º%20Período/PAPM%20V', 'papmvList');
+    fetchFiles('5º%20Período/Saúde%20mental', 'saudeMentalList');
 }
