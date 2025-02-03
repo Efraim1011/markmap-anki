@@ -16,7 +16,6 @@
             <button class="toggle-btn" onclick="toggleVisibility('periodo2')">2º Período</button>
             <button class="toggle-btn" onclick="toggleVisibility('periodo3')">3º Período</button>
             <button class="toggle-btn" onclick="toggleVisibility('periodo4')">4º Período</button>
-            <!-- Novo botão para 5º Período -->
             <button class="toggle-btn" onclick="toggleVisibility('periodo5')">5º Período</button>
         </div>
         
@@ -98,12 +97,7 @@
                 </ul>
             </div>
 
-            <button class="inner-toggle-btn" onclick="toggleVisibility('epidemiologia')">Epidemiologia</button>
-            <div id="epidemiologia" class="toggle-content">
-                <ul id="epidemiologiaList">
-                    <!-- Links serão carregados aqui pelo script -->
-                </ul>
-            </div>
+            <!-- Botões removidos: Epidemiologia e Saúde da Família IV -->
 
             <button class="inner-toggle-btn" onclick="toggleVisibility('otorrinolaringologia')">Otorrinolaringologia</button>
             <div id="otorrinolaringologia" class="toggle-content">
@@ -126,13 +120,6 @@
                 </ul>
             </div>
 
-            <button class="inner-toggle-btn" onclick="toggleVisibility('saudefamiliaiv')">Saúde da Família IV</button>
-            <div id="saudefamiliaiv" class="toggle-content">
-                <ul id="saudefamiliaivList">
-                    <!-- Links serão carregados aqui pelo script -->
-                </ul>
-            </div>
-
             <button class="inner-toggle-btn" onclick="toggleVisibility('fundamentosCirurgia')">Fundamentos da Cirurgia</button>
             <div id="fundamentosCirurgia" class="toggle-content">
                 <ul id="fundamentosCirurgiaList">
@@ -141,7 +128,6 @@
             </div>
         </div>
 
-        <!-- Novo bloco para o 5º Período -->
         <div id="periodo5" class="toggle-content">
             <button class="inner-toggle-btn" onclick="toggleVisibility('diagnosticoImagem')">Diagnóstico por imagem</button>
             <div id="diagnosticoImagem" class="toggle-content">
@@ -157,7 +143,8 @@
                 </ul>
             </div>
 
-            <button class="inner-toggle-btn" onclick="toggleVisibility('fundamentosDiagnostico')">Fundamentos do diagnóstico médico</button>
+            <!-- Adicionado id específico para sobrescrever as regras de largura no CSS -->
+            <button id="btn-fundamentosDiagnostico" class="inner-toggle-btn" onclick="toggleVisibility('fundamentosDiagnostico')">Fundamentos do diagnóstico médico</button>
             <div id="fundamentosDiagnostico" class="toggle-content">
                 <ul id="fundamentosDiagnosticoList">
                     <!-- Links serão carregados aqui pelo script -->
