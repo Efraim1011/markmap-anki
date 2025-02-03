@@ -22,9 +22,9 @@ async function fetchFiles(folder, elementId) {
         }
 
         const files = await response.json();
-        console.log(`Arquivos encontrados em ${folder}:`, files); // Log dos arquivos encontrados
+        console.log(`Arquivos encontrados em ${folder}:`, files);
         const list = document.getElementById(elementId);
-        list.innerHTML = ''; // Limpa os itens da lista existentes
+        list.innerHTML = '';
 
         files.forEach(file => {
             if (file.type === "file" && file.name.endsWith('.html')) {
@@ -32,7 +32,7 @@ async function fetchFiles(folder, elementId) {
                 const link = document.createElement('a');
                 link.href = `${folder}/${file.name}`;
                 link.textContent = file.name.replace(/%20/g, ' ');
-                link.target = '_blank'; // Abre o link em uma nova aba
+                link.target = '_blank';
                 listItem.appendChild(link);
                 list.appendChild(listItem);
             }
@@ -54,14 +54,11 @@ window.onload = function() {
     fetchFiles('3ºPeríodo/Imunologia', 'imunologiaList');
     fetchFiles('3ºPeríodo/Microbiologia', 'microbiologiaList');
     fetchFiles('4º%20Período/Farmacologia', 'farmacologiaList');
-    fetchFiles('4º%20Período/Epidemiologia', 'epidemiologiaList');
+    // Removidas as chamadas para Epidemiologia e Saúde da Família IV
     fetchFiles('4º%20Período/Otorrinolaringologia', 'otorrinolaringologiaList');
     fetchFiles('4º%20Período/Oftalmologia', 'oftalmologiaList');
     fetchFiles('4º%20Período/PAPM%20IV', 'papmivList');
-    fetchFiles('4º%20Período/Saúde%20da%20Família%20IV', 'saudefamiliaivList');
     fetchFiles('4º%20Período/Fundamentos%20da%20cirurgia', 'fundamentosCirurgiaList');
-    
-    // Novas chamadas para o 5º Período
     fetchFiles('5º%20Período/Diagnóstico%20por%20imagem', 'diagnosticoImagemList');
     fetchFiles('5º%20Período/Farmacologia', 'farmacologia5List');
     fetchFiles('5º%20Período/Fundamentos%20do%20diagnóstico%20médico', 'fundamentosDiagnosticoList');
